@@ -1,9 +1,9 @@
 spring:
   application:
-    name: ad-eureka
+    name: eureka
 
 server:
-  port: 8000
+  port: 19191
 
 eureka:
   instance:
@@ -23,7 +23,7 @@ eureka:
 ---
 spring:
   application:
-    name: ad-eureka
+    name: eureka
   profiles: server1
 server:
   port: 8000
@@ -38,7 +38,7 @@ eureka:
 ---
 spring:
   application:
-    name: ad-eureka
+    name: eureka
   profiles: server2
 server:
   port: 8001
@@ -53,7 +53,7 @@ eureka:
 ---
 spring:
   application:
-    name: ad-eureka
+    name: eureka
   profiles: server3
 server:
   port: 8002

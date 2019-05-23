@@ -18,6 +18,12 @@
     <packaging>jar</packaging>
 
     <dependencies>
+        <!-- 通用模块 -->
+        <dependency>
+            <groupId>com.free.system</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <!-- Hystrix 监控 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -73,12 +79,7 @@
             <version>8.0.12</version>
             <scope>runtime</scope>
         </dependency>
-        <!-- 通用模块 -->
-        <dependency>
-            <groupId>com.imooc.ad</groupId>
-            <artifactId>ad-common</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
+
         <!-- apache 提供的一些工具类 -->
         <dependency>
             <groupId>commons-codec</groupId>
