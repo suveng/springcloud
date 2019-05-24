@@ -1,6 +1,7 @@
 package com.free.system.cloud.filter;
 
 import com.netflix.zuul.ZuulFilter;
+import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.netflix.zuul.filters.support.FilterConstants;
@@ -34,6 +35,8 @@ public class PreRequestFilter extends ZuulFilter {
     @Override
     public Object run() throws ZuulException {
         //todo:获取时间,真实ip,uri
+        RequestContext ctx = RequestContext.getCurrentContext();
+        ctx.set("startTime", System.currentTimeMillis());
         //todo:鉴权
         return null;
     }

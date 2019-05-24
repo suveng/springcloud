@@ -16,7 +16,7 @@
 
     <packaging>pom</packaging>
 
-    <name>imooc-ad-spring-cloud</name>
+    <name>cloud</name>
     <description>Project For ImoocAd SpringCloud</description>
 
     <parent>
@@ -33,7 +33,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.16.18</version>
+            <version>RELEASE</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

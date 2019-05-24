@@ -13,10 +13,12 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>common</module>
-        <module>search</module>
-        <module>dashboard</module>
     </modules>
     <packaging>pom</packaging>
+
+    <dependencies>
+
+    </dependencies>
 
 
 </project>

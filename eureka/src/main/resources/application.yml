@@ -16,6 +16,9 @@ eureka:
     # 设置 Eureka Server 所在的地址，查询服务和注册服务都需要依赖这个地址
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 4000
 
 
 # 配置不同的 Profile, 需要注意, 如果要执行下面的 Profile, 需要将上面的配置注释掉
