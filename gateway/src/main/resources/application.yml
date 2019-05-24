@@ -1,0 +1,10 @@
+server:
+  port: 19192
+spring:
+  application:
+    name: gateway
+eureka:
+  client:
+    service-url:
+      defaultZone: http://111.230.95.206:19191/eureka/
+
