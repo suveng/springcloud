@@ -9,18 +9,17 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>user</artifactId>
+    <artifactId>permission</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <dependencies>
-        <!--###############通用模块##############-->
+        <!-- 通用模块 -->
         <dependency>
             <groupId>com.free.system</groupId>
             <artifactId>common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-
         <!--
             Eureka 客户端, 客户端向 Eureka Server 注册的时候会提供一系列的元数据信息, 例如: 主机, 端口, 健康检查url等
             Eureka Server 接受每个客户端发送的心跳信息, 如果在某个配置的超时时间内未接收到心跳信息, 实例会被从注册列表中移除
@@ -49,13 +48,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
-        <!-- MySQL 驱动, 注意, 这个需要与 MySQL 版本对应 -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.12</version>
-            <scope>runtime</scope>
-        </dependency>
+
         <!-- Hystrix 监控 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -68,16 +61,5 @@
         </dependency>
     </dependencies>
 
-    <!--
-        SpringBoot的Maven插件, 能够以Maven的方式为应用提供SpringBoot的支持，可以将
-        SpringBoot应用打包为可执行的jar或war文件, 然后以通常的方式运行SpringBoot应用
-     -->
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+
 </project>

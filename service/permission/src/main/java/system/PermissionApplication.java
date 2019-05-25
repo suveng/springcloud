@@ -1,6 +1,5 @@
-package com.free.system;
+package system;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
@@ -23,10 +22,9 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableDiscoveryClient
 @EnableHystrixDashboard
 @SpringBootApplication
-@MapperScan("com.free.system.service.common.modules.*.mapper")
-public class UserApplication {
+public class PermissionApplication {
     public static void main(String[] args) {
         System.out.println("########用户服务启动!########");
-        SpringApplication.run(UserApplication.class, args);
+        SpringApplication.run(PermissionApplication.class, args);
     }
 }

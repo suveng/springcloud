@@ -88,7 +88,7 @@ public class PreRequestFilter extends ZuulFilter {
         Object token = request.getParameter("token");
 
         if (ObjectUtils.isEmpty(token) && !request.getRequestURI().contains("login")) {
-            log.info("no token");
+            log.info("ip:{},no token",request.getRemoteAddr());
             //设置zuul 返回标志,true则转发给对应服务,false则直接返回,需要自己设置response
             context.setSendZuulResponse(false);
             //设置http status 为未授权

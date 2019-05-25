@@ -1,12 +1,12 @@
-package com.free.system.user.controller;
+package system.permission.controller;
 
-import com.alibaba.fastjson.JSON;
-import com.free.system.service.common.modules.user.entity.User;
 import com.free.system.service.common.response.Response;
 import com.free.system.service.common.response.ResponseBuilder;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * description:
@@ -16,11 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
  **/
 @RestController
 @Slf4j
-public class UserController {
+public class PermissionController {
 
-    @RequestMapping("/login")
-    public Response login(User user){
-        log.info("user:{}", JSON.toJSONString(user));
+    @RequestMapping("/get")
+    public Response login(HttpServletRequest httpServletRequest){
+        log.info("访问路径:{}",httpServletRequest.getRequestURI());
         return ResponseBuilder.buildSimpleSuccessResult();
     }
 }

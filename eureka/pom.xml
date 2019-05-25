@@ -24,11 +24,6 @@
     <!-- eureka server: 提供服务发现与服务注册 -->
     <dependencies>
         <dependency>
-            <groupId>com.free.system</groupId>
-            <artifactId>common</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>

@@ -10,10 +10,23 @@ eureka:
 
 zuul:
   prefix: /cloud
+  #配置路由
   routes:
-    sponsor:
+    #用户服务
+    user:
+      #拦截路径
       path: /user/**
-      serviceId: eureka-service-user
+      #服务id,根据application.yml配置
+      serviceId: user-service
+      #是否分割网关路由的路径,默认true
+      #当strip-prefix=true的时候 （http://localhost:5016/api/provide-user/1 -> http://localhost:4011/1)
+      #当strip-prefix=false的时候（http://localhost:5016/api/provide-user/1 -> http://localhost:4011/api/1）
       strip-prefix: false
+    permission:
+      path: /permission/**
+      serviceId: permission-service
+      strip-prefix: false
+  #重定向问题
   add-host-header: true
+  #标记，用来判断proxy是否应该添加X-Forwarded-* headers
   add-proxy-headers: true
