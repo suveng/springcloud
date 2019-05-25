@@ -1,0 +1,31 @@
+server:
+  port: 19193
+  servlet:
+    context-path: /user
+spring:
+  application:
+    name: eureka-service-user
+  datasource:
+    url: jdbc:mysql://111.230.95.206:3306/system?autoReconnect=true&characterEncoding=utf8&useUnicode=true&useSSL=false&serverTimezone=UTC
+    username: root
+    password: zxcvbnm123...
+    tomcat:
+      max-active: 4
+      min-idle: 2
+      initial-size: 2
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:19191/eureka/
+
+feign:
+  hystrix:
+    enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
