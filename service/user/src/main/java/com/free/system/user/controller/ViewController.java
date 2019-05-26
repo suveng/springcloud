@@ -4,6 +4,7 @@ package com.free.system.user.controller;
 import com.free.system.service.common.costtime.usage.CostTime;
 import com.free.system.service.common.logback.LogbackFactory;
 import org.slf4j.Logger;
+import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -14,9 +15,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @version 1.0.0
  **/
 @Controller
-public class ViewController {
+public class ViewController implements ErrorController {
     /** Field logger  */
     private Logger logger = LogbackFactory.SYSTEM_LOGGER;
+
+    @RequestMapping("/error")
+    @CostTime
+    public String error() {
+        logger.info("用户访问了 /error");
+        return "404";
+    }
 
 
     /**
@@ -32,18 +40,6 @@ public class ViewController {
         return "index";
     }
 
-    /**
-     * 方法:  welcom
-     * @author suwenguang
-     * @date 2019/5/20
-     * @return String
-     */
-    @RequestMapping("/welcome.html")
-    @CostTime
-    public String welcome() {
-        logger.info("用户访问了 /welcome");
-        return "welcome";
-    }
 
     /**
      * 方法:  login:返回登录页面
@@ -54,5 +50,10 @@ public class ViewController {
     @RequestMapping("/login.html")
     public String login() {
         return "login";
+    }
+
+    @Override
+    public String getErrorPath() {
+        return "/error";
     }
 }

@@ -1,54 +1,57 @@
-﻿<#include "_meta.ftl"/>
-<link href="static/h-ui.admin/css/H-ui.login.css" rel="stylesheet" type="text/css"/>
-
-<title>系统后台登录</title>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="${request.contextPath}/static/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="${request.contextPath}/static/style/admin.css" media="all">
+    <link rel="stylesheet" href="${request.contextPath}/static/style/login.css" media="all">
+    <title>登入 - 夏令营报名后台</title>
 </head>
+
 <body>
-<input type="hidden" id="TenantId" name="TenantId" value=""/>
-<div class="header"></div>
-<div class="loginWraper">
-    <div id="loginform" class="loginBox">
-        <form class="form form-horizontal" action="index.html" method="post">
-            <div class="row cl">
-                <label class="form-label col-xs-3"><i class="Hui-iconfont">&#xe60d;</i></label>
-                <div class="formControls col-xs-8">
-                    <input id="username" name="username" type="text" placeholder="账户" class="input-text size-L">
-                </div>
+<div class="layadmin-user-login layadmin-user-display-show" id="LAY-user-login" style="display: none;">
+
+    <div class="layadmin-user-login-main">
+        <div class="layadmin-user-login-box layadmin-user-login-header">
+            <h2>夏令营报名后台</h2>
+            <p>广东国防夏令营报名系统</p>
+        </div>
+        <div class="layadmin-user-login-box layadmin-user-login-body layui-form">
+            <div class="layui-form-item">
+                <label class="layadmin-user-login-icon layui-icon layui-icon-username"
+                       for="LAY-user-login-username"></label>
+                <input type="text" name="username" id="LAY-user-login-username" lay-verify="required" placeholder="用户名"
+                       class="layui-input" autocomplete="off">
             </div>
-            <div class="row cl">
-                <label class="form-label col-xs-3"><i class="Hui-iconfont">&#xe60e;</i></label>
-                <div class="formControls col-xs-8">
-                    <input id="password" name="password" type="password" placeholder="密码" class="input-text size-L">
-                </div>
+            <div class="layui-form-item">
+                <label class="layadmin-user-login-icon layui-icon layui-icon-password"
+                       for="LAY-user-login-password"></label>
+                <input type="password" name="password" id="LAY-user-login-password" lay-verify="required"
+                       placeholder="密码" class="layui-input" autocomplete="off">
             </div>
-            <div class="row cl">
-                <div class="formControls col-xs-8 col-xs-offset-3">
-                    <input class="input-text size-L" type="text" placeholder="验证码"
-                           onblur="if(this.value==''){this.value='验证码:'}"
-                           onclick="if(this.value=='验证码:'){this.value='';}" value="验证码:" style="width:150px;">
-                    <img src=""> <a id="kanbuq" href="javascript:;">看不清，换一张</a></div>
+            <div class="layui-form-item">
+                <button class="layui-btn layui-btn-fluid" lay-submit lay-filter="LAY-user-login-submit">登 入</button>
             </div>
-            <div class="row cl">
-                <div class="formControls col-xs-8 col-xs-offset-3">
-                    <label for="online">
-                        <input type="checkbox" name="online" id="online" value="">
-                        使我保持登录状态</label>
-                </div>
+            <div class="layui-form-item">
+                <button class="layui-btn layui-btn-fluid" type="reset">重 置</button>
             </div>
-            <div class="row cl">
-                <div class="formControls col-xs-8 col-xs-offset-3">
-                    <input id="login" name="" type="button" class="btn btn-success radius size-L"
-                           value="&nbsp;登&nbsp;&nbsp;&nbsp;&nbsp;录&nbsp;">
-                    <input name="" type="reset" class="btn btn-default radius size-L"
-                           value="&nbsp;取&nbsp;&nbsp;&nbsp;&nbsp;消&nbsp;">
-                </div>
-            </div>
-        </form>
+        </div>
     </div>
+
+    <div class="layui-trans layadmin-user-login-footer">
+
+        <p>© ${.now?string["yyyy-MM-dd"]} <a href="" target="_blank">suveng@163.com</a></p>
+    </div>
+
 </div>
-<div class="footer">Copyright suveng@163.com</div>
-<#include "_footer.ftl"/>
-<script type="text/javascript" src="static/system/user/login.js"></script>
+
+<script src="${request.contextPath}/static/layui/layui.js"></script>
+<script>
+
+</script>
 </body>
 </html>
-

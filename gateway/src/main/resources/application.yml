@@ -9,7 +9,7 @@ eureka:
       defaultZone: http://localhost:19191/eureka/
 
 zuul:
-  prefix: /cloud
+#  prefix: /cloud
   #配置路由
   routes:
     #用户服务
