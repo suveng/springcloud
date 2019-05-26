@@ -19,8 +19,9 @@ zuul:
       #服务id,根据application.yml配置
       serviceId: user-service
       #是否分割网关路由的路径,默认true
-      #当strip-prefix=true的时候 （http://localhost:5016/api/provide-user/1 -> http://localhost:4011/1)
-      #当strip-prefix=false的时候（http://localhost:5016/api/provide-user/1 -> http://localhost:4011/api/1）
+      #无prefix时
+      #当strip-prefix=true的时候 （http://localhost:5016/user-service/1 -> http://localhost:4011/1)
+      #当strip-prefix=false的时候（http://localhost:5016/user-service/1 -> http://localhost:4011/user-service/1）
       strip-prefix: false
     permission:
       path: /permission/**

@@ -95,7 +95,7 @@ public class PreRequestFilter extends ZuulFilter {
             context.setResponseStatusCode(HttpStatus.UNAUTHORIZED.value());
             try {
                 //返回重定向页面
-                response.sendRedirect("/cloud/user/login");
+                response.sendRedirect("/user/login.html");
             } catch (IOException e) {
                 log.error("io 错误:{}", e.getMessage());
             }

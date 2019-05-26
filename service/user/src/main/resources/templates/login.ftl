@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <link rel="stylesheet" href="${request.contextPath}/static/layui/css/layui.css" media="all">
-    <link rel="stylesheet" href="${request.contextPath}/static/style/admin.css" media="all">
-    <link rel="stylesheet" href="${request.contextPath}/static/style/login.css" media="all">
-    <title>登入 - 夏令营报名后台</title>
+    <link rel="stylesheet" href="${request.contextPath}/static/layui/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="${request.contextPath}/static/layui/style/admin.css" media="all">
+    <link rel="stylesheet" href="${request.contextPath}/static/layui/style/login.css" media="all">
+    <title>登入 - 后台</title>
+    <#include "head_script.ftl">
 </head>
 
 <body>
@@ -17,8 +18,8 @@
 
     <div class="layadmin-user-login-main">
         <div class="layadmin-user-login-box layadmin-user-login-header">
-            <h2>夏令营报名后台</h2>
-            <p>广东国防夏令营报名系统</p>
+            <h2>后台-登录</h2>
+            <p>测试系统 by suveng@163.com</p>
         </div>
         <div class="layadmin-user-login-box layadmin-user-login-body layui-form">
             <div class="layui-form-item">
@@ -34,10 +35,14 @@
                        placeholder="密码" class="layui-input" autocomplete="off">
             </div>
             <div class="layui-form-item">
-                <button class="layui-btn layui-btn-fluid" lay-submit lay-filter="LAY-user-login-submit">登 入</button>
+                <button id="login" class="layui-btn layui-btn-fluid" lay-submit lay-filter="LAY-user-login-submit">登 入
+                </button>
             </div>
             <div class="layui-form-item">
                 <button class="layui-btn layui-btn-fluid" type="reset">重 置</button>
+            </div>
+            <div class="layui-form-item">
+                <button id="test-id" class="layui-btn layui-btn-fluid">test</button>
             </div>
         </div>
     </div>
@@ -49,9 +54,14 @@
 
 </div>
 
-<script src="${request.contextPath}/static/layui/layui.js"></script>
+<#include "footer_script.ftl">
 <script>
-
+    /**
+     * 系统
+     */
+    $(function () {
+        console.log("jquery ready");
+    });
 </script>
 </body>
 </html>

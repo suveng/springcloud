@@ -1,7 +1,7 @@
 server:
   port: 19194
-#  servlet:
-#    context-path: /permission
+  servlet:
+    context-path: /permission
 spring:
   application:
     name: permission-service
