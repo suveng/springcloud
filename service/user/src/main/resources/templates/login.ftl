@@ -21,30 +21,31 @@
             <h2>后台-登录</h2>
             <p>测试系统 by suveng@163.com</p>
         </div>
+
+
         <div class="layadmin-user-login-box layadmin-user-login-body layui-form">
             <div class="layui-form-item">
                 <label class="layadmin-user-login-icon layui-icon layui-icon-username"
                        for="LAY-user-login-username"></label>
-                <input type="text" name="username" id="LAY-user-login-username" lay-verify="required" placeholder="用户名"
+                <input id="username" type="text" name="username" lay-verify="required" placeholder="用户名"
                        class="layui-input" autocomplete="off">
             </div>
             <div class="layui-form-item">
                 <label class="layadmin-user-login-icon layui-icon layui-icon-password"
                        for="LAY-user-login-password"></label>
-                <input type="password" name="password" id="LAY-user-login-password" lay-verify="required"
+                <input id="password" type="password" name="password" lay-verify="required"
                        placeholder="密码" class="layui-input" autocomplete="off">
             </div>
             <div class="layui-form-item">
-                <button id="login" class="layui-btn layui-btn-fluid" lay-submit lay-filter="LAY-user-login-submit">登 入
+                <button id="login" class="layui-btn layui-btn-fluid">登
+                    入
                 </button>
             </div>
             <div class="layui-form-item">
-                <button class="layui-btn layui-btn-fluid" type="reset">重 置</button>
-            </div>
-            <div class="layui-form-item">
-                <button id="test-id" class="layui-btn layui-btn-fluid">test</button>
+                <button type="reset" class="layui-btn layui-btn-fluid">重 置</button>
             </div>
         </div>
+
     </div>
 
     <div class="layui-trans layadmin-user-login-footer">
@@ -61,7 +62,37 @@
      */
     $(function () {
         console.log("jquery ready");
+
+        $("#login").click(function () {
+            loginFunc()
+        });
+        $(document).keyup(function (event) {
+            //按下回车键
+            if (event.ctrlKey && event.which === 13) {
+                loginFunc();
+            } else if (event.which === 13) {
+                layer.msg("请按ctrl+enter键提交", {icon: 1, time: 1000})
+            }
+        })
     });
+
+    var loginFunc = function () {
+        var username = $("#username").val();
+        var password = $("#password").val();
+        if (username == null || username === undefined || username === '' || password === '' || password == null || password === undefined) {
+            layer.msg('请填写完整用户名和密码', {icon: 5, time: 2000});
+        }
+        $.ajax({
+            url: "/user/login",
+            type: "post",
+            data: {"username":username,"password":password},
+            dataType: "json",
+            success: function (res) {
+                console.log("返回数据:" + res);
+            }
+        })
+    }
+
 </script>
 </body>
 </html>

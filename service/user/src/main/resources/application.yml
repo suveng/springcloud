@@ -21,6 +21,7 @@ spring:
       max-active: 4
       min-idle: 2
       initial-size: 2
+    driver-class-name: com.mysql.cj.jdbc.Driver
   #视图引擎配置
   freemarker:
     #视图存放目录
