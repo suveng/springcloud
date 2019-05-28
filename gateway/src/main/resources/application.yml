@@ -27,6 +27,10 @@ zuul:
       path: /permission/**
       serviceId: permission-service
       strip-prefix: false
+    console:
+      path: /console/**
+      serviceId: console-service
+      strip-prefix: false
   #重定向问题
   add-host-header: true
   #标记，用来判断proxy是否应该添加X-Forwarded-* headers

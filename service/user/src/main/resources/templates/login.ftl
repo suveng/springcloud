@@ -89,6 +89,10 @@
             dataType: "json",
             success: function (res) {
                 console.log("返回数据:" + res);
+                if (res.code===200){
+                    window.location.href = "/console/index"
+                }
+
             }
         })
     }

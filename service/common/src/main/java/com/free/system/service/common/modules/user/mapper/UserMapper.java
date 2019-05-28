@@ -1,16 +1,25 @@
 package com.free.system.service.common.modules.user.mapper;
 
-import com.free.system.service.common.modules.user.entity.User;
-import com.baomidou.mybatisplus.mapper.BaseMapper;
+import com.free.system.service.common.db.Order;
+import com.free.system.service.common.modules.user.model.User;
 
-/**
- * <p>
- * 用户表 Mapper 接口
- * </p>
- *
- * @author suveng@163.com
- * @since 2019-05-25
- */
-public interface UserMapper extends BaseMapper<User> {
+import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
+public interface UserMapper {
+    int deleteByPrimaryKey(Integer id);
+
+    int insert(User record);
+
+    int insertSelective(User record);
+
+    User selectByPrimaryKey(Integer id);
+
+    int updateByPrimaryKeySelective(User record);
+
+    int updateByPrimaryKey(User record);
+
+    int selectTotal(@Param("record") User record);
+
+    List<User> selectList(@Param("record") User record, @Param("order") Order order, @Param("offset") int offset, @Param("count") int count);
 }

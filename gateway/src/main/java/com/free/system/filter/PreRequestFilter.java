@@ -4,11 +4,12 @@ import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.cloud.netflix.zuul.filters.support.FilterConstants;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
-import org.springframework.util.ObjectUtils;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -71,24 +72,24 @@ public class PreRequestFilter extends ZuulFilter {
         HttpServletResponse response = context.getResponse();
 
         context.set("startTime", System.currentTimeMillis());
-        //todo:鉴权
-        this.check(context, request, response);
+        //鉴权
+        check(context, request, response);
         return null;
     }
 
-
     /**
-     * 说明:
+     * 说明: 鉴权
      * @author suwenguang
-     * @date 2019/5/25
+     * @date 2019/5/28
      * @return void <- 返回类型
      */
     private void check(RequestContext context, HttpServletRequest request, HttpServletResponse response) {
-        //鉴权逻辑
-        Object token = request.getParameter("token");
-
-        if (ObjectUtils.isEmpty(token) && !request.getRequestURI().contains("login") && !request.getRequestURI().contains("static")) {
-            log.info("ip:{},no token",request.getRemoteAddr());
+        //login以及static 跳过
+        if (request.getRequestURI().contains("login") || request.getRequestURI().contains("static")) {
+            return;
+        }
+        if (!getToken(request)) {
+            log.info("ip:{},no token", request.getRemoteAddr());
             //设置zuul 返回标志,true则转发给对应服务,false则直接返回,需要自己设置response
             context.setSendZuulResponse(false);
             //设置http status 为未授权
@@ -102,5 +103,35 @@ public class PreRequestFilter extends ZuulFilter {
             //设置自定义的返回体
             context.setResponse(response);
         }
+    }
+
+
+    /**
+     * 说明: 检查token
+     * @author suwenguang
+     * @date 2019/5/25
+     * @return void <- 返回类型
+     */
+    private boolean getToken(HttpServletRequest request) {
+
+        String token = "";
+        //检查session有没有token
+        token = (String) request.getSession().getAttribute("token");
+        if (StringUtils.isNotBlank(token)) {
+            return true;
+        }
+        //检查cookie有没有token
+        Cookie[] cookies = request.getCookies();
+        for (Cookie cookie : cookies) {
+            if ("token".equals(cookie.getName())) {
+                token = cookie.getValue();
+                if (StringUtils.isNotBlank(token)) {
+                    return true;
+                }
+            }
+        }
+        //检查参数有没有token
+        token = request.getParameter("token");
+        return StringUtils.isNotBlank(token);
     }
 }
