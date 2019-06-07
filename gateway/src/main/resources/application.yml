@@ -23,14 +23,6 @@ zuul:
       #当strip-prefix=true的时候 （http://localhost:5016/user-service/1 -> http://localhost:4011/1)
       #当strip-prefix=false的时候（http://localhost:5016/user-service/1 -> http://localhost:4011/user-service/1）
       strip-prefix: false
-    permission:
-      path: /permission/**
-      serviceId: permission-service
-      strip-prefix: false
-    console:
-      path: /console/**
-      serviceId: console-service
-      strip-prefix: false
   #重定向问题
   add-host-header: true
   #标记，用来判断proxy是否应该添加X-Forwarded-* headers

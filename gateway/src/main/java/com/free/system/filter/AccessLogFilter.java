@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
  * @date 2019/5/24
  * @version 1.0.0
  **/
-@Component
+//@Component
 @Slf4j
 public class AccessLogFilter extends ZuulFilter {
     /**
