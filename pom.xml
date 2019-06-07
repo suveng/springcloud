@@ -67,6 +67,20 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
+        <repository>
+            <id>central</id>
+            <name>central repository</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </snapshots>
+        </repository>
     </repositories>
 
 </project>
