@@ -31,7 +31,7 @@ public class Response {
      * @param responseEnums 系统内部错误枚举类
      * @param data        返回数据
      */
-    Response(ResponseEnums responseEnums, Object data) {
+    Response(IResponseEnums responseEnums, Object data) {
         this.code = responseEnums.getCode();
         this.msg = responseEnums.getDescription();
         this.data = data;

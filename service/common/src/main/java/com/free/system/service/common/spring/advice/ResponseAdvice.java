@@ -1,7 +1,7 @@
-package com.free.system.service.common.response;
+package com.free.system.service.common.spring.advice;
 
 
-import com.free.system.service.common.exception.annotation.IgnoreResponseAdvice;
+import com.free.system.service.common.response.Response;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;

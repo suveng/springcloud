@@ -1,4 +1,4 @@
-package com.free.system.service.common.exception.handle;
+package com.free.system.service.common.spring.advice;
 
 import com.free.system.service.common.logback.LogbackFactory;
 import com.free.system.service.common.response.Response;

@@ -1,7 +1,7 @@
-package com.free.system.service.common.costtime;
+package com.free.system.service.common.spring.aop.costtime;
 
 
-import com.free.system.service.common.costtime.usage.CostTime;
+import com.free.system.service.common.spring.aop.costtime.usage.CostTime;
 import com.free.system.service.common.logback.LogbackFactory;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;

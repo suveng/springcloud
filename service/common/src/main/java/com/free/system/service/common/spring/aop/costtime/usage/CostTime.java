@@ -1,4 +1,4 @@
-package com.free.system.service.common.costtime.usage;
+package com.free.system.service.common.spring.aop.costtime.usage;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -4,9 +4,7 @@ import com.free.system.response.Response;
 import com.free.system.response.ResponseBuilder;
 import com.free.system.response.ResponseEnums;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -29,9 +27,4 @@ public class UserController {
         return ResponseBuilder.build(ResponseEnums.NEED_LOGIN,null);
     }
 
-    //@RequestMapping("/login")
-    //public Response login(User user){
-    //    //登录接口
-    //
-    //}
 }

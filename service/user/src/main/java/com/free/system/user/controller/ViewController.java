@@ -1,7 +1,7 @@
 package com.free.system.user.controller;
 
 
-import com.free.system.service.common.costtime.usage.CostTime;
+import com.free.system.service.common.spring.aop.costtime.usage.CostTime;
 import com.free.system.service.common.logback.LogbackFactory;
 import org.slf4j.Logger;
 import org.springframework.boot.web.servlet.error.ErrorController;
