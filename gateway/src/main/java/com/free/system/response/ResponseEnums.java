@@ -8,6 +8,14 @@ package com.free.system.response;
  **/
 public enum ResponseEnums {
     /**
+     * 登录失败
+     **/
+    LOGIN_FAIL(6002,"登录失败"),
+    /**
+     * 需要登录
+     **/
+    NEED_LOGIN(6001,"需要登录"),
+    /**
      * 请求成功
      */
     SIMPLE_SUCCESS(2000, "请求成功"),
