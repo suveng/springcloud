@@ -61,6 +61,7 @@ public enum ResponseEnums implements IResponseEnums{
         this.description = description;
     }
 
+    @Override
     public Integer getCode() {
         return code;
     }
@@ -69,6 +70,7 @@ public enum ResponseEnums implements IResponseEnums{
         this.code = code;
     }
 
+    @Override
     public String getDescription() {
         return description;
     }
