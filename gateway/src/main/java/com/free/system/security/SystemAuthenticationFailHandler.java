@@ -1,6 +1,7 @@
 package com.free.system.security;
 
 import com.alibaba.fastjson.JSON;
+import com.free.system.response.IResponse;
 import com.free.system.response.Response;
 import com.free.system.response.ResponseBuilder;
 import com.free.system.response.ResponseEnums;
@@ -35,7 +36,7 @@ public class SystemAuthenticationFailHandler implements AuthenticationFailureHan
         log.info("登录失败:{}", exception.getMessage());
         response.setContentType("application/json;charset=UTF-8");
         PrintWriter writer = response.getWriter();
-        Response res = ResponseBuilder.build(ResponseEnums.LOGIN_FAIL, exception.getMessage());
+        IResponse res = ResponseBuilder.build(ResponseEnums.LOGIN_FAIL, exception.getMessage());
         writer.write(JSON.toJSONString(res));
     }
 }

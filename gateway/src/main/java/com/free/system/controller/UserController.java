@@ -1,8 +1,6 @@
 package com.free.system.controller;
 
-import com.free.system.response.Response;
-import com.free.system.response.ResponseBuilder;
-import com.free.system.response.ResponseEnums;
+import com.free.system.response.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,8 +21,8 @@ public class UserController {
      * @return  com.free.system.response.Response <- 返回类型
      */
     @RequestMapping("/login.html")
-    public Response loginView(){
-        return ResponseBuilder.build(ResponseEnums.NEED_LOGIN,null);
+    public IResponse loginView(){
+        return ResponseBuilder.build(OtherResponseDemo.class,ResponseEnums.NEED_LOGIN,null);
     }
 
 }

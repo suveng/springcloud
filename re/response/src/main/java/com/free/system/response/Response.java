@@ -8,8 +8,7 @@ import lombok.Data;
  * since 2019/2/26
  * description: 统一返回层
  **/
-@Data
-public class Response {
+public class Response implements IResponse {
     /**
      * 错误码
      */
@@ -45,5 +44,35 @@ public class Response {
 
 
     public Response() {
+    }
+
+    @Override
+    public Integer getCode() {
+        return code;
+    }
+
+    @Override
+    public void setCode(Integer code) {
+        this.code = code;
+    }
+
+    @Override
+    public String getMsg() {
+        return msg;
+    }
+
+    @Override
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    @Override
+    public Object getData() {
+        return data;
+    }
+
+    @Override
+    public void setData(Object data) {
+        this.data = data;
     }
 }
