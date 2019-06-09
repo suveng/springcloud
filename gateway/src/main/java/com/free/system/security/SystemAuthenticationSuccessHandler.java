@@ -17,7 +17,7 @@ import java.io.PrintWriter;
 
 /**
  * description: 自定义登录成功处理器
- * @author suwenguang@52tt.com
+ * @author suwenguang
  * @date 2019/6/8
  * @version 1.0.0
  **/

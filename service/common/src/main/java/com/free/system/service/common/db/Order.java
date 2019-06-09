@@ -2,7 +2,7 @@ package com.free.system.service.common.db;
 
 /**
  * description:
- * @author suwenguang@52tt.com
+ * @author suwenguang
  * @date 2019/5/28
  * @version 1.0.0
  **/

@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * description:
- * @author suwenguang@52tt.com
+ * @author suwenguang
  * @date 2019/6/7
  * @version 1.0.0
  **/

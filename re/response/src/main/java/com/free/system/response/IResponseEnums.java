@@ -2,7 +2,7 @@ package com.free.system.response;
 
 /**
  * description: 系统错误描述接口
- * @author suwenguang@52tt.com
+ * @author suwenguang
  * @date 2019/6/8
  * @version 1.0.0
  **/

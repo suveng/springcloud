@@ -15,7 +15,7 @@ import java.sql.SQLException;
 
 /**
  * description:
- * @author suwenguang@52tt.com
+ * @author suwenguang
  * @date 2019/5/24
  * @version 1.0.0
  **/
@@ -44,7 +44,7 @@ public class GlobalExceptionAdvice {
     /**
      * 方法:  handleIndexOutOfBoundsException
      *
-     * @author suwenguang@52tt.com
+     * @author suwenguang
      * @date 2019/5/20
      *
      *

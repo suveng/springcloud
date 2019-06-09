@@ -12,7 +12,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * description:
- * @author suwenguang@52tt.com
+ * @author suwenguang
  * @date 2019/5/23
  * @version 1.0.0
  **/

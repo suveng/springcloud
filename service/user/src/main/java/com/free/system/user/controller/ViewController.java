@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * description:
- * @author suwenguang@52tt.com
+ * @author suwenguang
  * @date 2019/5/17
  * @version 1.0.0
  **/

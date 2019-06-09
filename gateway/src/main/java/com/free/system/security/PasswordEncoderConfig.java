@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * description: 注入明文密码加密解密工具
- * @author suwenguang@52tt.com
+ * @author suwenguang
  * @date 2019/6/7
  * @version 1.0.0
  **/

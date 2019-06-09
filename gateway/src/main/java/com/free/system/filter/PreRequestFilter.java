@@ -16,7 +16,7 @@ import java.io.IOException;
 
 /**
  * description:
- * @author suwenguang@52tt.com
+ * @author suwenguang
  * @date 2019/5/24
  * @version 1.0.0
  **/
