@@ -1,7 +1,5 @@
 package com.free.system.response;
 
-import lombok.Data;
-
 /**
  * @author suwenguang
  * email suveng@163.com

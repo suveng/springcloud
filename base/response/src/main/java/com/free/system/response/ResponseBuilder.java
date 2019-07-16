@@ -1,9 +1,6 @@
 package com.free.system.response;
 
 import lombok.extern.slf4j.Slf4j;
-import sun.rmi.runtime.Log;
-
-import java.util.logging.Logger;
 
 /**
  * @author suwenguang
