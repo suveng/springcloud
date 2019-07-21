@@ -23,6 +23,7 @@ public class UserCertificationService implements UserDetailsService {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         log.info("用户名:{}", username);

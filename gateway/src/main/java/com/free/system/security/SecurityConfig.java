@@ -49,7 +49,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 //配置不需要认证的路由
-                .antMatchers("/login.html","**static**").permitAll()
+                .antMatchers("/login","/login.html","**static**").permitAll()
                 //所有路由都要认证
                 .anyRequest().authenticated()
                 //禁用跨站攻击防护机制
