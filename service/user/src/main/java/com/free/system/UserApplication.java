@@ -23,7 +23,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableDiscoveryClient
 @EnableHystrixDashboard
 @SpringBootApplication
-@MapperScan("com.free.system.service.common.modules.*.mapper")
+@MapperScan("com.free.system.service.**.mapper")
 public class UserApplication {
     public static void main(String[] args) {
         System.out.println("########用户服务启动!########");

@@ -1,9 +1,8 @@
 package com.free.system.user.controller;
 
 
-import com.free.system.service.common.spring.aop.costtime.usage.CostTime;
-import com.free.system.service.common.logback.LogbackFactory;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,10 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class ViewController implements ErrorController {
     /** Field logger  */
-    private Logger logger = LogbackFactory.SYSTEM_LOGGER;
-
+    private static final Logger logger = LoggerFactory.getLogger(ViewController.class);
     @RequestMapping("/error")
-    @CostTime
     public String error() {
         logger.info("用户访问了 /error");
         return "404";
@@ -34,7 +31,6 @@ public class ViewController implements ErrorController {
      * @return String
      */
     @RequestMapping("/index.html")
-    @CostTime
     public String index() {
         logger.info("用户访问了 /index");
         return "index";

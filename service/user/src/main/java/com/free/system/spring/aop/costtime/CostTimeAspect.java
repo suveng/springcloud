@@ -1,13 +1,13 @@
-package com.free.system.service.common.spring.aop.costtime;
+package com.free.system.spring.aop.costtime;
 
 
-import com.free.system.service.common.spring.aop.costtime.usage.CostTime;
-import com.free.system.service.common.logback.LogbackFactory;
+import com.free.system.spring.aop.costtime.usage.CostTime;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 /**
@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class CostTimeAspect {
-    private static final Logger log = LogbackFactory.COSTTIME;
+	private static final Logger logger = LoggerFactory.getLogger(CostTimeAspect.class);
 
     @Pointcut(value = "execution(* *..*.*.*(..)) ")
     public void anyMethod() {
@@ -33,16 +33,16 @@ public class CostTimeAspect {
      */
     @Around(value = "anyMethod() && @annotation(costTime)", argNames = "pjp,costTime")
     public Object aroundMethod(ProceedingJoinPoint pjp, CostTime costTime) {
-        log.info("#############【{}】开始执行!", pjp.getSignature().toString());
+        logger.info("#############【{}】开始执行!", pjp.getSignature().toString());
         long start = System.nanoTime();
         try {
             Object res = pjp.proceed();
             long end = System.nanoTime();
             double cost = (end - start) / 1000000;
-            log.info("#############【{}】:执行完成,耗时：【{} 毫秒】", pjp.getSignature().toString(), cost);
+            logger.info("#############【{}】:执行完成,耗时：【{} 毫秒】", pjp.getSignature().toString(), cost);
             return res;
         } catch (Throwable throwable) {
-            log.error("方法【{}】执行异常！", pjp.getSignature().getDeclaringTypeName());
+            logger.error("方法【{}】执行异常！", pjp.getSignature().getDeclaringTypeName());
             throw new RuntimeException("方法【" + pjp.getSignature().getDeclaringTypeName() + "】执行异常！", throwable);
         }
     }

@@ -1,4 +1,4 @@
-package com.free.system.service.common.spring.advice;
+package com.free.system.spring.advice;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -13,5 +13,6 @@ import java.lang.annotation.Target;
  **/
 @Target({ElementType.METHOD,ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
+@SuppressWarnings("all")
 public @interface IgnoreResponseAdvice {
 }

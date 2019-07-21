@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  **/
 @RestController
 @Slf4j
-public class UserController {
+public class ViewController {
     /**
      * 说明: REST 接口返回错误码,需要登录,让客户端处理
      * @author  suwenguang

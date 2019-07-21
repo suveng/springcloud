@@ -1,7 +1,7 @@
-package com.free.system.service.common.spring.advice;
+package com.free.system.spring.advice;
 
 
-import com.free.system.service.common.response.Response;
+import com.free.system.response.Response;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;

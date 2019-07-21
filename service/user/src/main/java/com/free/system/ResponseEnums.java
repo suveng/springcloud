@@ -1,4 +1,4 @@
-package com.free.system.service.common.response;
+package com.free.system;
 
 /**
  * @author suwenguang

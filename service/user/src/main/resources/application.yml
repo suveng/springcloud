@@ -13,15 +13,15 @@ spring:
     name: user-service
   #数据源配置
   datasource:
-    url: jdbc:mysql://111.230.95.206:3306/system?autoReconnect=true&characterEncoding=utf8&useUnicode=true&useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/spring?autoReconnect=true&characterEncoding=utf8&useUnicode=true&useSSL=false&serverTimezone=UTC
     username: root
-    password: zxcvbnm123...
+    password: root
     #tomcat容器配置
     tomcat:
       max-active: 4
       min-idle: 2
       initial-size: 2
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: com.mysql.jdbc.Driver
   #视图引擎配置
   freemarker:
     #视图存放目录
@@ -59,6 +59,6 @@ management:
         include: "*"
 ## 该配置节点为独立的节点，有很多同学容易将这个配置放在spring的节点下，导致配置无法被识别
 mybatis:
-  mapper-locations: classpath*:com/free/system/service/common/modules/**/*.xml  #注意：一定要对应mapper映射xml文件的所在路径
-  type-aliases-package: com.free.system.service.common.modules.*.model  # 注意：对应实体类的路径
+  mapper-locations: classpath*:com/free/system/**/*.xml  #注意：一定要对应mapper映射xml文件的所在路径
+  type-aliases-package: com.free.system.**.*.model  # 注意：对应实体类的路径
 
