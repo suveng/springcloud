@@ -40,8 +40,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         //配置
         http.formLogin()
                 //自定义登录方法
-                .loginPage("/login.html")
-                .loginProcessingUrl("/login")
+                //.loginPage("/login.html")
+                //.loginProcessingUrl("/login")
                 //自定义登录认证成功处理器
                 .successHandler(systemAuthenticationSuccessHandler)
                 //自定义登录失败处理器
