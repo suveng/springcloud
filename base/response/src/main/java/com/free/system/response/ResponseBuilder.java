@@ -1,6 +1,6 @@
 package com.free.system.response;
 
-import lombok.extern.slf4j.Slf4j;
+import cn.hutool.log.StaticLog;
 
 /**
  * @author suwenguang
@@ -8,7 +8,7 @@ import lombok.extern.slf4j.Slf4j;
  * since 2019/2/26
  * description: 统一返回层 工厂类
  **/
-@Slf4j
+
 public class ResponseBuilder {
     /**
      * 创建方法
@@ -31,7 +31,7 @@ public class ResponseBuilder {
         try {
             res = response.newInstance();
         } catch (InstantiationException  | IllegalAccessException e) {
-            log.error("获取实例失败",e);
+            StaticLog.error("获取实例失败",e);
             return new Response(responseEnums,data);
         }
         res.setCode(responseEnums.getCode());
