@@ -43,7 +43,7 @@ public class ResponseAdvice implements ResponseBodyAdvice<Object> {
                                   Class<? extends HttpMessageConverter<?>> aClass,
                                   ServerHttpRequest serverHttpRequest,
                                   ServerHttpResponse serverHttpResponse) {
-        Response res = new Response(0, "默认包装返回", null);
+        Response res = new Response("0", "默认包装返回", null);
         if (o == null) {
             return res;
         } else if (o instanceof Response) {

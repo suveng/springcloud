@@ -27,3 +27,8 @@ zuul:
   add-host-header: true
   #标记，用来判断proxy是否应该添加X-Forwarded-* headers
   add-proxy-headers: true
+  debug:
+    request: true
+logging:
+  level:
+    com.netflix: DEBUG

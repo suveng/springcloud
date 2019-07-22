@@ -13,7 +13,7 @@ public interface IResponseEnums {
      * @date    2019/6/8
      * @return  java.lang.Integer <- 返回类型
      */
-    Integer getCode();
+    String getCode();
 
 
     /**

@@ -62,8 +62,8 @@ public enum ResponseEnums implements IResponseEnums{
     }
 
     @Override
-    public Integer getCode() {
-        return code;
+    public String getCode() {
+        return String.valueOf(code);
     }
 
     public void setCode(Integer code) {

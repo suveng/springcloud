@@ -1,12 +1,16 @@
 package com.free.system.security;
 
+import com.free.system.filter.ResultExceptionTranslationFilter;
+import com.free.system.filter.TokenAuthenticationFilter;
+import com.free.system.service.ITokenService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.access.ExceptionTranslationFilter;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
 /**
  * description:
@@ -15,46 +19,40 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  * @version 1.0.0
  **/
 @Configuration
+@Order(1)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+	@Autowired
+	private ITokenService tokenService;
 
-    /**
-     * 登录成功的处理器
-     **/
-    @Autowired
-    private SystemAuthenticationSuccessHandler systemAuthenticationSuccessHandler;
 
-    /**
-     * 登录失败的处理器
-     **/
-    @Autowired
-    private SystemAuthenticationFailHandler systemAuthenticationFailHandler;
-    /**
-     * 说明: 重写security的配置方法
-     * @author suwenguang
-     * @date 2019/6/7
-     * @return void <- 返回类型
-     */
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        //配置
+	/**
+	 * 添加自定义provider授权器
+	 * @param auth
+	 * @throws Exception
+	 */
+	@Override
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		auth.authenticationProvider(new TokenAuthenticationProvider(this.tokenService));
+	}
 
-        http.formLogin()
-                //自定义登录方法
-                //.loginPage("/login.html")
-                //.loginProcessingUrl("/login")
-                //自定义登录认证成功处理器
-                .successHandler(systemAuthenticationSuccessHandler)
-                //自定义登录失败处理器
-                .failureHandler(systemAuthenticationFailHandler)
-                .and()
-                .authorizeRequests()
-                //配置不需要认证的路由
-                .antMatchers("/login","/login.html","**static**").permitAll()
-                //所有路由都要认证
-                .anyRequest().authenticated()
-                //禁用跨站攻击防护机制
-                .and().csrf().disable()
-                ;
-    }
+	/**
+	 * 说明: 重写security的配置方法
+	 * @author suwenguang
+	 * @date 2019/6/7
+	 * @return void <- 返回类型
+	 */
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+		//配置
+		http
+			.antMatcher("/api/**")//捕获到url
+			.addFilterAfter(new TokenAuthenticationFilter(), BasicAuthenticationFilter.class)//在BasicAuthenticationFilter之后增加过滤器
+			.addFilterAfter(new ResultExceptionTranslationFilter(), ExceptionTranslationFilter.class)//在ExceptionTranslationFilter之后添加过滤器
+			.authorizeRequests()//授权
+			.anyRequest().hasRole("API")//只有拥有api权限才通过
+			.and()
+			.csrf()
+			.disable();
+	}
 }
