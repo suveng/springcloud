@@ -1,8 +1,8 @@
 package com.free.system.exception;
 
 
-import com.free.system.response.Response;
-import com.free.system.response.ResponseEnums;
+import com.free.system.common.response.Response;
+import com.free.system.common.response.ResponseEnums;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

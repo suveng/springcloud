@@ -1,12 +1,9 @@
 package com.free.system.controller;
 
 import cn.hutool.core.lang.Assert;
-import cn.hutool.core.util.ObjectUtil;
-import cn.hutool.core.util.StrUtil;
 import com.free.system.model.UserVo;
-import com.free.system.response.*;
+import com.free.system.common.response.*;
 import com.free.system.security.UserCertificationService;
-import com.netflix.discovery.converters.Auto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -29,7 +26,7 @@ public class AuthenticationController {
 	 * 说明: REST 接口返回错误码,需要登录,让客户端处理
 	 * @author suwenguang
 	 * @date 2019/6/8
-	 * @return com.free.system.response.Response <- 返回类型
+	 * @return com.free.system.common.response.Response <- 返回类型
 	 */
 	@RequestMapping("/login.html")
 	public IResponse loginView() {

@@ -38,6 +38,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         //配置
+
         http.formLogin()
                 //自定义登录方法
                 //.loginPage("/login.html")

@@ -1,8 +1,8 @@
-package com.free.system.spring.advice;
+package com.free.system.common.advice;
 
 
 import com.free.system.ResponseEnums;
-import com.free.system.response.Response;
+import com.free.system.common.response.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.dao.DataAccessException;

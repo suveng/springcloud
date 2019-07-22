@@ -1,4 +1,4 @@
-package com.free.system.response;
+package com.free.system.common.response;
 
 /**
  * description: 系统错误描述接口

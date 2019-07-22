@@ -1,4 +1,4 @@
-package com.free.system.response;
+package com.free.system.common.response;
 
 /**
  * @author suwenguang
@@ -6,7 +6,7 @@ package com.free.system.response;
  * since 2019/2/26
  * description: 返回状态码
  **/
-public enum ResponseEnumsDemo implements IResponseEnums {
+public enum ResponseEnums {
     /**
      * 请求成功
      */
@@ -20,19 +20,19 @@ public enum ResponseEnumsDemo implements IResponseEnums {
     /**
      * 请求失败
      **/
-    SIMPLE_ERROR(5001, "请求失败"),
+    SIMPLE_ERROR(500001, "请求失败"),
     /**
      * 参数错误
      */
-    ILLEGAL_ARGUMENT_ERROR(5002, "参数错误"),
+    ILLEGAL_ARGUMENT_ERROR(500002, "参数错误"),
     /**
      * 返回结果有误
      */
-    ILLEGAL_RESULT_ERROR(5003, "返回结果有误"),
+    ILLEGAL_RESULT_ERROR(500003, "返回结果有误"),
     /**
      * 数据库错误
      */
-    SQL_ERROR(5004, "数据库错误"),
+    SQL_ERROR(500004, "数据库错误"),
     ;
     /**
      * 系统状态码
@@ -45,15 +45,14 @@ public enum ResponseEnumsDemo implements IResponseEnums {
     private String description;
 
 
-    ResponseEnumsDemo() {
+    ResponseEnums() {
     }
 
-    ResponseEnumsDemo(Integer code, String description) {
+    ResponseEnums(Integer code, String description) {
         this.code = code;
         this.description = description;
     }
 
-    @Override
     public Integer getCode() {
         return code;
     }
@@ -62,7 +61,6 @@ public enum ResponseEnumsDemo implements IResponseEnums {
         this.code = code;
     }
 
-    @Override
     public String getDescription() {
         return description;
     }

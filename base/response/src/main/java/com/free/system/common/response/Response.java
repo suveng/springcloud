@@ -1,4 +1,4 @@
-package com.free.system.response;
+package com.free.system.common.response;
 
 import cn.hutool.core.util.RandomUtil;
 

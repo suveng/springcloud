@@ -1,4 +1,4 @@
-package com.free.system.spring.advice;
+package com.free.system.common.advice;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

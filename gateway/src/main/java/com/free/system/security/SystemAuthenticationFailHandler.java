@@ -1,10 +1,9 @@
 package com.free.system.security;
 
 import com.alibaba.fastjson.JSON;
-import com.free.system.response.IResponse;
-import com.free.system.response.Response;
-import com.free.system.response.ResponseBuilder;
-import com.free.system.response.ResponseEnums;
+import com.free.system.common.response.IResponse;
+import com.free.system.common.response.ResponseBuilder;
+import com.free.system.common.response.ResponseEnums;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;

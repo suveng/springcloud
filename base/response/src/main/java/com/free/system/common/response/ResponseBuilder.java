@@ -1,4 +1,4 @@
-package com.free.system.response;
+package com.free.system.common.response;
 
 import cn.hutool.log.StaticLog;
 
@@ -20,11 +20,11 @@ public class ResponseBuilder {
     }
 
     /**
-     * 说明: 处理扩展的response实例, 例如 com.free.system.response.OtherResponseDemo
+     * 说明: 处理扩展的response实例, 例如 com.free.system.common.response.OtherResponseDemo
      * @see     OtherResponseDemo
      * @author  suwenguang
      * @date    2019/6/9
-     * @return  com.free.system.response.IResponse <- 返回类型
+     * @return  com.free.system.common.response.IResponse <- 返回类型
      */
     public static IResponse build(Class<? extends Response> response,IResponseEnums responseEnums, Object data)  {
         IResponse res = null;
