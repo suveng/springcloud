@@ -34,15 +34,15 @@
 
         <!-- 数据库链接URL、用户名、密码 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://192.168.9.234:3306/tt_commision?useUnicode=true&amp;characterEncoding=utf8&amp;zeroDateTimeBehavior=convertToNull"
+                        connectionURL="jdbc:mysql://localhost:3306/spring?useUnicode=true&amp;characterEncoding=utf8&amp;zeroDateTimeBehavior=convertToNull"
                         userId="root"
-                        password="123456"/>
+                        password="root"/>
 
         <!-- info_表 -->
-        <javaModelGenerator targetPackage="yiyou.tt.commision.core.modules.thirdparty.model" targetProject="generate-source"/>
-        <sqlMapGenerator targetPackage="yiyou.tt.commision.core.modules.thirdparty.mapper" targetProject="generate-source"/><!-- XML映射文件 -->
-        <javaClientGenerator targetPackage="yiyou.tt.commision.core.modules.thirdparty.mapper" targetProject="generate-source" type="XMLMAPPER"/><!-- Mapper文件 -->
-        <javaServiceGenerator targetPackage="yiyou.tt.commision.core.modules.thirdparty.service" targetProject="generate-source"/>
+        <javaModelGenerator targetPackage="com.free.system.id.model" targetProject="generate-source"/>
+        <sqlMapGenerator targetPackage="com.free.system.id.mapper" targetProject="generate-source"/><!-- XML映射文件 -->
+        <javaClientGenerator targetPackage="com.free.system.id.mapper" targetProject="generate-source" type="XMLMAPPER"/><!-- Mapper文件 -->
+        <javaServiceGenerator targetPackage="com.free.system.id.service" targetProject="generate-source"/>
 <!--         <javaControllerGenerator targetPackage="yiyou.tt.commision.core.modules.commision.controller" targetProject="generate-source"/> -->
 
         <!-- 要生成哪些表(更改tableName和domainObjectName就可以) -->
@@ -51,10 +51,10 @@
                  enableUpdateByExample="false" enableDeleteByExample="false"
                  enableSelectByExample="false" selectByExampleQueryId="false"/> -->
 
-		<table tableName="paas_channel_log" domainObjectName="PaasChannelLog"
+		<table tableName="unique_id_log" domainObjectName="UniqueIdLog"
 					 enableCountByExample="false"
 					 enableUpdateByExample="false" enableDeleteByExample="false"
-					 enableSelectByExample="false" selectByExampleQueryId="false"/> 
+					 enableSelectByExample="false" selectByExampleQueryId="false"/>
 
     </context>
 </generatorConfiguration>

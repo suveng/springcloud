@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.free.system.id.mapper.UniqueIdLogMapper">
+  <resultMap id="BaseResultMap" type="com.free.system.id.model.UniqueIdLog">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="biz_tag" jdbcType="VARCHAR" property="bizTag" />
+    <result column="max_id" jdbcType="BIGINT" property="maxId" />
+    <result column="desc" jdbcType="VARCHAR" property="desc" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, biz_tag, max_id, desc, create_time, modify_time
+  </sql>
+  <sql id="Where_Clause">
+     where 1=1 
+    <if test="record.id != null">
+      and uil.id = #{record.id,jdbcType=BIGINT}
+    </if>
+    <if test="record.bizTag != null and record.bizTag != ''">
+      and uil.biz_tag = #{record.bizTag,jdbcType=VARCHAR}
+    </if>
+    <if test="record.maxId != null">
+      and uil.max_id = #{record.maxId,jdbcType=BIGINT}
+    </if>
+    <if test="record.desc != null and record.desc != ''">
+      and uil.desc = #{record.desc,jdbcType=VARCHAR}
+    </if>
+    <if test="record.createTime != null">
+      and uil.create_time = #{record.createTime,jdbcType=TIMESTAMP}
+    </if>
+    <if test="record.modifyTime != null">
+      and uil.modify_time = #{record.modifyTime,jdbcType=TIMESTAMP}
+    </if>
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from unique_id_log
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from unique_id_log
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.free.system.id.model.UniqueIdLog">
+    insert into unique_id_log (id, biz_tag, max_id, 
+      desc, create_time, modify_time
+      )
+    values (#{id,jdbcType=BIGINT}, #{bizTag,jdbcType=VARCHAR}, #{maxId,jdbcType=BIGINT}, 
+      #{desc,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.free.system.id.model.UniqueIdLog">
+    insert into unique_id_log
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="bizTag != null">
+        biz_tag,
+      </if>
+      <if test="maxId != null">
+        max_id,
+      </if>
+      <if test="desc != null">
+        desc,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="modifyTime != null">
+        modify_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="bizTag != null">
+        #{bizTag,jdbcType=VARCHAR},
+      </if>
+      <if test="maxId != null">
+        #{maxId,jdbcType=BIGINT},
+      </if>
+      <if test="desc != null">
+        #{desc,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.free.system.id.model.UniqueIdLog">
+    update unique_id_log
+    <set>
+      <if test="bizTag != null">
+        biz_tag = #{bizTag,jdbcType=VARCHAR},
+      </if>
+      <if test="maxId != null">
+        max_id = #{maxId,jdbcType=BIGINT},
+      </if>
+      <if test="desc != null">
+        desc = #{desc,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.free.system.id.model.UniqueIdLog">
+    update unique_id_log
+    set biz_tag = #{bizTag,jdbcType=VARCHAR},
+      max_id = #{maxId,jdbcType=BIGINT},
+      desc = #{desc,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectTotal" parameterType="com.free.system.id.model.UniqueIdLog" resultType="java.lang.Integer">
+    select count(*) from unique_id_log uil
+    <include refid="Where_Clause" />
+  </select>
+  <select id="selectList" parameterType="com.free.system.id.model.UniqueIdLog" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+     from unique_id_log uil
+    <include refid="Where_Clause" />
+    <if test="order != null and order.colName != null and order.colName != ''">
+      order by ${order.colName}
+      <if test="order.desc">
+        desc
+      </if>
+    </if>
+    <if test="count > 0">
+      limit #{count} offset #{offset}
+    </if>
+  </select>
+</mapper>
