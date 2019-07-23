@@ -34,10 +34,10 @@ import java.util.List;
 @EnableHystrixDashboard
 @SpringBootApplication
 @MapperScan("com.free.system.service.**.mapper")
-public class UserApplication {
+public class ConsoleApplication {
 	public static void main(String[] args) {
-		System.out.println("########用户服务启动!########");
-		SpringApplication.run(UserApplication.class, args);
+		System.out.println("########管理后台启动!########");
+		SpringApplication.run(ConsoleApplication.class, args);
 	}
 
 	@Bean

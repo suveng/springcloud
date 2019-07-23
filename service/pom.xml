@@ -15,6 +15,7 @@
         <module>common</module>
         <module>user</module>
         <module>id</module>
+        <module>console</module>
     </modules>
     <packaging>pom</packaging>
 
