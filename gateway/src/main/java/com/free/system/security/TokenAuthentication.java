@@ -1,9 +1,6 @@
 package com.free.system.security;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import com.google.common.base.Strings;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 
@@ -12,19 +9,33 @@ import java.util.Collection;
 /**
  * description:
  * @author suwenguang
- * @date 19-7-22
  * @version 1.0.0
  **/
-@Data
-@NoArgsConstructor
-@RequiredArgsConstructor
 public class TokenAuthentication implements Authentication {
 
 	/**
 	 * 存放token的信息
 	 **/
-	@NonNull
 	private String token;
+
+	public TokenAuthentication(String token) {
+		if (Strings.isNullOrEmpty(token)) {
+			this.token = "guest";
+		}
+		this.token = token;
+	}
+
+	public TokenAuthentication() {
+		this.token = "guest";
+	}
+
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+	}
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {

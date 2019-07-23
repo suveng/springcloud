@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 public class TokenService implements ITokenService {
 	@Override
 	public UserDetails authenticateToken(String token) {
-		if (token.equals("abcdefg")) {
+		if (token.equals("suwenguang")) {
 			return User.builder()
 				.username("api")
 				.password("")
