@@ -4,7 +4,7 @@ server:
   port: 19195
   #服务入口前缀
   servlet:
-    context-path: /user
+    context-path: /console
 #spring的配置
 spring:
   #spring应用配置
