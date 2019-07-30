@@ -1,0 +1,64 @@
+#服务配置
+server:
+  #服务端口
+  port: 19196
+  #服务入口前缀
+  servlet:
+    context-path: /order
+#spring的配置
+spring:
+  #spring应用配置
+  application:
+    #应用名称
+    name: order-service
+  #数据源配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring?autoReconnect=true&characterEncoding=utf8&useUnicode=true&useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+    #tomcat容器配置
+    tomcat:
+      max-active: 4
+      min-idle: 2
+      initial-size: 2
+    driver-class-name: com.mysql.jdbc.Driver
+  #视图引擎配置
+  freemarker:
+    #视图存放目录
+    template-loader-path: classpath:/templates/
+    #缓存启动配置
+    cache: false
+    charset: utf-8
+    allow-request-override: false
+    allow-session-override: false
+    check-template-location: true
+    content-type: text/html
+    enabled: true
+    expose-request-attributes: false
+    expose-session-attributes: false
+    expose-spring-macro-helpers: true
+    prefer-file-system-access: true
+    #在 ftl 中使用 request.contextPath
+    request-context-attribute: request
+    settings: {"date_format":"yyyy-MM-dd","datetime_format":"yyyy-MM-dd HH:mm:ss"}
+    suffix: .ftl
+#服务注册配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:19191/eureka/
+#服务调用配置
+feign:
+  hystrix:
+    enabled: true
+#服务暴露
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+## 该配置节点为独立的节点，有很多同学容易将这个配置放在spring的节点下，导致配置无法被识别
+mybatis:
+  mapper-locations: classpath*:com/free/system/**/*.xml  #注意：一定要对应mapper映射xml文件的所在路径
+  type-aliases-package: com.free.system.**.*.model  # 注意：对应实体类的路径
+

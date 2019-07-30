@@ -17,7 +17,7 @@ public class ResponseBuilder {
 	 * @param data 返回数据
 	 */
 	public static Response build(IResponseEnums responseEnums, Object data) {
-		return new Response(responseEnums.getCode() + RandomUtil.randomInt(6), responseEnums.getDescription(), data);
+		return new Response(responseEnums.getCode() + RandomUtil.randomNumbers(6), responseEnums.getDescription(), data);
 	}
 
 	/**
@@ -32,7 +32,7 @@ public class ResponseBuilder {
 			res = response.newInstance();
 		} catch (InstantiationException | IllegalAccessException e) {
 			StaticLog.error("获取实例失败", e);
-			return new Response(responseEnums.getCode() + RandomUtil.randomInt(6), responseEnums.getDescription(), data);
+			return new Response(responseEnums.getCode() + RandomUtil.randomNumbers(6), responseEnums.getDescription(), data);
 		}
 		res.setCode(responseEnums.getCode());
 		res.setMsg(responseEnums.getDescription());
@@ -41,6 +41,6 @@ public class ResponseBuilder {
 	}
 
 	public static Response build(String code, String msg, Object data) {
-		return new Response(code + RandomUtil.randomInt(6), msg, data);
+		return new Response(code + RandomUtil.randomNumbers(6), msg, data);
 	}
 }
