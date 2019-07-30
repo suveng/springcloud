@@ -28,6 +28,12 @@
 
     <properties>
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
+        <mybatis-spring-boot-starter.version>2.0.0</mybatis-spring-boot-starter.version>
+        <hutool-all.version>4.5.16</hutool-all.version>
+        <lombok.version>1.18.8</lombok.version>
+        <guava.version>19.0</guava.version>
+        <fastjson.version>1.2.58</fastjson.version>
+        <HdrHistogram.version>2.1.9</HdrHistogram.version>
     </properties>
 
     <build>
@@ -43,27 +49,9 @@
         </plugins>
     </build>
 
-    <dependencies>
-
-        <dependency>
-            <groupId>cn.hutool</groupId>
-            <artifactId>hutool-all</artifactId>
-            <version>4.5.16</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-    </dependencies>
-
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>com.free.system</groupId>
-                <artifactId>base</artifactId>
-                <version>1.0</version>
-            </dependency>
+            <!--第三方-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
@@ -71,21 +59,62 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool-all.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
-                <version>19.0</version>
+                <version>${guava.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
-                <version>1.2.58</version>
+                <version>${fastjson.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>org.hdrhistogram</groupId>
                 <artifactId>HdrHistogram</artifactId>
-                <version>2.1.9</version>
+                <version>${HdrHistogram.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis-spring-boot-starter.version}</version>
+            </dependency>
+
+            <!--内部自定义-->
+            <dependency>
+                <groupId>com.free.system</groupId>
+                <artifactId>response</artifactId>
+                <version>1.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.free.system</groupId>
+                <artifactId>common</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.free.system</groupId>
+                <artifactId>base</artifactId>
+                <version>1.0</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
