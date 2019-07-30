@@ -12,8 +12,8 @@
 
 ## 技术选型
 
-- `JDK1.8`
-- `Spring Cloud`
+- [`JDK1.8`](https://www.oracle.com/)
+- [`Spring Cloud`](https://www.docs4dev.com/zh)
     - `Spring Boot` 
     - `Spring Security`
     - `Spring Data`
@@ -23,12 +23,13 @@
     - `Feign`
     - `Hystrix`
     - `Spring Config`
-- `MyBatis` 
-- `Redis 5.0`
-- `MySQL 5.7`
-- `Druid` 
-- `FastJSON`
-- `hutool`
+- [`MyBatis`](http://www.mybatis.org/mybatis-3/zh/index.html) 
+- [`Redis 5.0`](https://redis.io/)
+- [`MySQL 5.7`](https://www.mysql.com/)
+- [`Druid`](https://github.com/alibaba/druid) 
+- [`FastJSON`](https://github.com/alibaba/fastjson)
+- [`hutool`](https://github.com/looly/hutool)
+- [`X-admin`](https://gitee.com/daniuit/X-admin)
 
 ## 构建
 
@@ -60,20 +61,18 @@
 
 ## 技术架构
 
-技术架构图
+技术架构图....(待补充)
 
 ## 部署架构
 
-部署架构图
+部署架构图....(待补充)
 
 
-# 外部依赖
-
-- `spring cloud: Finchley.RELEASE` 
-- `hutool`工具包
+## 外部依赖
 
 
 
+    
 ## 环境信息 
 
 自行搭建或者修改 `application.yml` 里面的配置信息
@@ -91,5 +90,5 @@
 - 全局请求id `LogDetailThreadLocal`
 
 ## FAQ
-
+提问留下`issue`即可
 
