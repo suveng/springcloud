@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @version 1.0.0
  **/
 @Controller
+@RequestMapping("/console")
 public class ViewController {
 
 	@RequestMapping("/index.html")

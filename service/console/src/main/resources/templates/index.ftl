@@ -8,18 +8,18 @@
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8"/>
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
     <#--样式-->
-    <link rel="stylesheet" href="${request.contextPath}/static/css/font.css">
-    <link rel="stylesheet" href="${request.contextPath}/static/css/xadmin.css">
+    <link rel="stylesheet" href="${request.contextPath}/console/static/css/font.css">
+    <link rel="stylesheet" href="${request.contextPath}/console/static/css/xadmin.css">
 
     <#--脚本-->
-    <script src="${request.contextPath}/static/js/jquery.min.js"></script>
+    <script src="${request.contextPath}/console/static/js/jquery.min.js"></script>
 
-    <script src="${request.contextPath}/static/lib/layui/layui.js" charset="utf-8"></script>
-    <script type="text/javascript" src="${request.contextPath}/static/js/xadmin.js"></script>
+    <script src="${request.contextPath}/console/static/lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="${request.contextPath}/console/static/js/xadmin.js"></script>
     <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
     <!--[if lt IE 9]>
-    <script src="${request.contextPath}/static/js/html5.min.js"></script>
-    <script src="${request.contextPath}/static/js/respond.min.js"></script>
+    <script src="${request.contextPath}/console/static/js/html5.min.js"></script>
+    <script src="${request.contextPath}/console/static/js/respond.min.js"></script>
     <![endif]-->
     <script>
         // 是否开启刷新记忆tab功能
@@ -138,4 +138,4 @@
 <!-- 中部结束 -->
 </body>
 </html>
-<script src="${request.contextPath}/system/js/index.js"></script>
+<script src="${request.contextPath}/console/system/js/index.js"></script>

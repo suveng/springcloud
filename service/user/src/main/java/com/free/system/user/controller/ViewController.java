@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @version 1.0.0
  **/
 @Controller
+@RequestMapping("/user")
 public class ViewController implements ErrorController {
     /** Field logger  */
     private static final Logger logger = LoggerFactory.getLogger(ViewController.class);

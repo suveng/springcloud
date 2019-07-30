@@ -4,13 +4,13 @@ server:
   port: 19195
   #服务入口前缀
   servlet:
-    context-path: /console
+    context-path: /
 #spring的配置
 spring:
   #spring应用配置
   application:
     #应用名称
-    name: console-service
+    name: console
   #数据源配置
   datasource:
     url: jdbc:mysql://localhost:3306/spring?autoReconnect=true&characterEncoding=utf8&useUnicode=true&useSSL=false&serverTimezone=UTC

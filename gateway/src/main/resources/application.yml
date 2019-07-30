@@ -17,7 +17,7 @@ zuul:
       #拦截路径
       path: /user/**
       #服务id,根据application.yml配置
-      serviceId: user-service
+      serviceId: user
       #是否分割网关路由的路径,默认true
       #无prefix时
       #当strip-prefix=true的时候 （http://localhost:5016/user-service/1 -> http://localhost:4011/1)
@@ -28,7 +28,7 @@ zuul:
       #拦截路径
       path: /console/**
       #服务id,根据application.yml配置
-      serviceId: console-service
+      serviceId: console
       #是否分割网关路由的路径,默认true
       #无prefix时
       #当strip-prefix=true的时候 （http://localhost:5016/user-service/1 -> http://localhost:4011/1)
@@ -39,7 +39,7 @@ zuul:
       #拦截路径
       path: /order/**
       #服务id,根据application.yml配置
-      serviceId: order-service
+      serviceId: order
       strip-prefix: false
   #重定向问题
   add-host-header: true
