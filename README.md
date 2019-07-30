@@ -2,50 +2,56 @@
 
 ## 项目简介
 
-- base: 基础复用包
-- eureka: 服务注册与服务发现
-- gateway: 网关
-- service: 服务
-    - common: 重用mapper等等
-    - user: 用户服务
-    - console: 管理后台服务
+- `base`: 基础复用包
+- `eureka`: 服务注册与服务发现
+- `gateway`: 网关
+- `service`: 服务
+    - `common`: 重用`mapper`等等
+    - `user`: 用户服务
+    - `console`: 管理后台服务
 
 ## 技术选型
 
-- JDK1.8
-- Spring Cloud
-    - Spring Boot 
-    - Spring Security
-    - Spring Data
-    - Zuul
-    - Eureka
-    - Ribbon
-    - Feign
-    - Hystrix
-    - Spring Config
-- MyBatis 
-- Redis 5.0
-- MySQL 5.7
-- Druid 
-- FastJSON
-- hutool
+- `JDK1.8`
+- `Spring Cloud`
+    - `Spring Boot` 
+    - `Spring Security`
+    - `Spring Data`
+    - `Zuul`
+    - `Eureka`
+    - `Ribbon`
+    - `Feign`
+    - `Hystrix`
+    - `Spring Config`
+- `MyBatis` 
+- `Redis 5.0`
+- `MySQL 5.7`
+- `Druid` 
+- `FastJSON`
+- `hutool`
 
 ## 构建
 
-- mvn clean install -Dmaven.test.skip=true
-- mvn clean package -Dmaven.test.skip=true
+- `mvn clean install -Dmaven.test.skip=true`
+- `mvn clean package -Dmaven.test.skip=true`
 
 ## 部署
 
-- 本地部署
+### 本地部署
 
-- 测试部署
+服务启动顺序
+
+1. `eureka`
+2. `gateway`
+3. 任意一个`service`
+
+### 测试部署
 
 ## 测试策略
 
 自动化测试如何分类，哪些必须写测试，哪些没有必要写测试
 
-- junit4
+- `junit4`
 
 
 
@@ -72,8 +78,8 @@
 
 自行搭建或者修改 `application.yml` 里面的配置信息
 
-- MySQL `127.0.0.1:3306/srping` 
-- redis `127.0.0.1:6379` 
+- `MySQL` `127.0.0.1:3306/srping` 
+- `Redis` `127.0.0.1:6379` 
 
 ## 编码实践
 
