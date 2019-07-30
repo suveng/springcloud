@@ -8,11 +8,13 @@
 - service
     - common
     - user
+    - console
 
 ## 技术选型
 
 - JDK1.8
 - Spring Cloud
+- Spring security
 - MyBatis
 - Redis
 - MySQL
@@ -60,6 +62,7 @@
 
 - 统一的编码实践，比如异常处理原则、分页封装等
 - 统一日志msg格式: LogDetail是封装的日志抽象,原理是 `String.format()`
+
 
 
 ## FAQ
