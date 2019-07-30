@@ -2,24 +2,32 @@
 
 ## 项目简介
 
-- base
-- eureka
-- gateway
-- service
-    - common
-    - user
-    - console
+- base: 基础复用包
+- eureka: 服务注册与服务发现
+- gateway: 网关
+- service: 服务
+    - common: 重用mapper等等
+    - user: 用户服务
+    - console: 管理后台服务
 
 ## 技术选型
 
 - JDK1.8
 - Spring Cloud
-- Spring security
-- MyBatis
-- Redis
-- MySQL
-- Druid
-- fastJSON
+    - Spring Boot 
+    - Spring Security
+    - Spring Data
+    - Zuul
+    - Eureka
+    - Ribbon
+    - Feign
+    - Hystrix
+    - Spring Config
+- MyBatis 
+- Redis 5.0
+- MySQL 5.7
+- Druid 
+- FastJSON
 - hutool
 
 ## 构建
@@ -35,9 +43,11 @@
 
 ## 测试策略
 
+自动化测试如何分类，哪些必须写测试，哪些没有必要写测试
+
 - junit4
 
-自动化测试如何分类，哪些必须写测试，哪些没有必要写测试
+
 
 ## 领域模型(业务对象封装)
 
@@ -50,20 +60,27 @@
 
 部署架构图
 
+
 # 外部依赖
+
+- `spring cloud: Finchley.RELEASE` 
+- `hutool`工具包
 
 
 
 ## 环境信息 
 
-- 各个环境的访问方式，数据库连接等
+自行搭建或者修改 `application.yml` 里面的配置信息
+
+- MySQL `127.0.0.1:3306/srping` 
+- redis `127.0.0.1:6379` 
 
 ## 编码实践
 
-- 统一的编码实践，比如异常处理原则、分页封装等
+- 统一代码格式化 `.editorconfig`
+- 统一异常处理 `GlobalExceptionAdvice`
 - 统一日志msg格式: LogDetail是封装的日志抽象,原理是 `String.format()`
-
-
+- 全局请求id `LogDetailThreadLocal`
 
 ## FAQ
 
