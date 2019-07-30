@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @date 2019-07-30
  * @version 1.0.0
  **/
-@FeignClient(name = "ORDER-SERVICE")
+@FeignClient(name = "ORDER-SERVICE",path = "/order")
 public interface OrderService {
-	@GetMapping("/order/get")
+	@GetMapping("/get")
 	Response get();
 }

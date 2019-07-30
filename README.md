@@ -77,6 +77,8 @@
 
 ## 编码实践
 
+- 统一路径转发: 每个微服务配置 服务名,在`zuul`规则过滤掉这个路径服务,直接转发,
+详情看`gateway`模块的`application.yml`,服务间调用配置带上 服务前缀,详情看`user`模块的`client`
 - 统一代码格式化 `.editorconfig`
 - 统一异常处理 `GlobalExceptionAdvice`
 - 统一日志msg格式: LogDetail是封装的日志抽象,原理是 `String.format()`
