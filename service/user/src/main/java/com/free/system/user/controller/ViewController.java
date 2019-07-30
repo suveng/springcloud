@@ -1,6 +1,7 @@
 package com.free.system.user.controller;
 
 
+import com.free.system.common.response.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.servlet.error.ErrorController;
@@ -17,6 +18,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ViewController implements ErrorController {
     /** Field logger  */
     private static final Logger logger = LoggerFactory.getLogger(ViewController.class);
+
+    /**
+     * 说明: 自定义error页面
+     * @author  suwenguang
+     * @date    2019-07-30
+     * @return  java.lang.String <- 返回类型
+     */
     @RequestMapping("/error")
     public String error() {
         logger.info("用户访问了 /error");

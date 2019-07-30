@@ -36,7 +36,7 @@ import java.util.List;
 @MapperScan("com.free.system.service.**.mapper")
 public class OrderApplication {
 	public static void main(String[] args) {
-		System.out.println("########用户服务启动!########");
+		System.out.println("########订单服务启动!########");
 		SpringApplication.run(OrderApplication.class, args);
 	}
 
