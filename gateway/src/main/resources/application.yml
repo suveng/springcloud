@@ -3,13 +3,19 @@ server:
 spring:
   application:
     name: gateway
+#todo://服务暴露: 线上修改
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:19191/eureka/
 
 zuul:
-#  prefix: /cloud
+  #  prefix: /cloud
   #配置路由
   routes:
     #用户服务
@@ -48,5 +54,7 @@ zuul:
   debug:
     request: true
 logging:
+  config: classpath:logback-spring.xml
+  file: /data/log/cloud/gateway/info.gateway.log
   level:
     com.netflix: DEBUG

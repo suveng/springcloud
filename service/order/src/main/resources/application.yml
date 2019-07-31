@@ -42,11 +42,6 @@ spring:
     request-context-attribute: request
     settings: {"date_format":"yyyy-MM-dd","datetime_format":"yyyy-MM-dd HH:mm:ss"}
     suffix: .ftl
-#sprng boot admin 监控
-  boot:
-    admin:
-      client:
-        url: http://localhost:20201
 #服务注册配置
 eureka:
   client:
@@ -56,7 +51,7 @@ eureka:
 feign:
   hystrix:
     enabled: true
-#服务暴露
+#todo://服务暴露: 线上修改
 management:
   endpoints:
     web:

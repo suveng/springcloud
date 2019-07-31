@@ -17,7 +17,6 @@ import java.util.List;
  * @date 19-7-21
  * @version 1.0.0
  **/
-
 @Configuration
 public class FastJSONConfig extends WebMvcConfigurerAdapter {
     @Override
