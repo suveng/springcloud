@@ -13,6 +13,7 @@
         <module>gateway</module>
         <module>service</module>
         <module>base</module>
+        <module>spring-boot-admin-server</module>
     </modules>
 
     <packaging>pom</packaging>

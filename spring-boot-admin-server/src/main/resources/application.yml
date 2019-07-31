@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: admin
+server:
+  port: 20201
+
+#服务注册配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:19191/eureka/
+#服务调用配置
+feign:
+  hystrix:
+    enabled: true
+#服务暴露
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
