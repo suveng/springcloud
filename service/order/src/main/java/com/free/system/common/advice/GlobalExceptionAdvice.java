@@ -20,7 +20,7 @@ import java.sql.SQLException;
  * @date 2019/5/24
  * @version 1.0.0
  **/
-@RestControllerAdvice
+//@RestControllerAdvice
 public class GlobalExceptionAdvice {
 
 	/** Field logger  */
