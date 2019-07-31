@@ -11,20 +11,15 @@
 
     <artifactId>spring-boot-admin-server</artifactId>
 
-    <properties>
-        <spring-boot-admin.version>2.0.1</spring-boot-admin.version>
-    </properties>
 
     <dependencies>
         <dependency>
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-starter-server</artifactId>
-            <version>${spring-boot-admin.version}</version>
         </dependency>
         <dependency>
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-server-ui</artifactId>
-            <version>${spring-boot-admin.version}</version>
         </dependency>
 
         <dependency>
