@@ -135,6 +135,11 @@
                 <artifactId>base</artifactId>
                 <version>1.0</version>
             </dependency>
+            <dependency>
+                <groupId>com.free.system</groupId>
+                <artifactId>log</artifactId>
+                <version>1.0</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>

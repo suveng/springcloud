@@ -21,12 +21,10 @@
         <dependency>
             <groupId>com.free.system</groupId>
             <artifactId>response</artifactId>
-            <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>com.free.system</groupId>
             <artifactId>log</artifactId>
-            <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
