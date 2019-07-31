@@ -17,7 +17,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
  * since 2019/2/27
  * description: spring统一返回处理类
  **/
-@RestControllerAdvice
+//@RestControllerAdvice
 @SuppressWarnings("all")
 public class ResponseAdvice implements ResponseBodyAdvice<Object> {
 
