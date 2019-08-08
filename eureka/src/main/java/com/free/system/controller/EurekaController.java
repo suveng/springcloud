@@ -2,9 +2,7 @@ package com.free.system.controller;
 
 import com.free.system.common.response.Response;
 import com.free.system.common.response.ResponseBuilder;
-import com.free.system.common.response.ResponseEnums;
 import com.free.system.common.response.ResponseEnumsDemo;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,12 +12,11 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * description:
  * @author suwenguang
- * @date 2019/6/8
+ * @date 2019-08-08
  * @version 1.0.0
  **/
 @RestController
-@Slf4j
-public class AuthenticationController {
+public class EurekaController {
 	@Value("${env}")
 	private String env;
 
@@ -40,5 +37,4 @@ public class AuthenticationController {
 		return ResponseBuilder.build(ResponseEnumsDemo.SIMPLE_SUCCESS, res);
 
 	}
-
 }

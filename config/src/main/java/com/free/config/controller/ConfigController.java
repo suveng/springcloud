@@ -1,25 +1,25 @@
-package com.free.system.controller;
+package com.free.config.controller;
 
 import com.free.system.common.response.Response;
 import com.free.system.common.response.ResponseBuilder;
-import com.free.system.common.response.ResponseEnums;
 import com.free.system.common.response.ResponseEnumsDemo;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.xml.transform.Result;
+import java.nio.channels.Pipe;
 
 /**
  * description:
  * @author suwenguang
- * @date 2019/6/8
+ * @date 2019-08-08
  * @version 1.0.0
  **/
 @RestController
-@Slf4j
-public class AuthenticationController {
+public class ConfigController {
+
 	@Value("${env}")
 	private String env;
 
@@ -28,9 +28,9 @@ public class AuthenticationController {
 
 	/**
 	 * 说明: 获取实例基本信息
-	 * @author suwenguang
-	 * @date 2019-08-08
-	 * @return com.free.system.common.response.Response <- 返回类型
+	 * @author  suwenguang
+	 * @date    2019-08-08
+	 * @return  com.free.system.common.response.Response <- 返回类型
 	 */
 	@RequestMapping("/get")
 	public Response get(HttpServletRequest request) {
@@ -40,5 +40,4 @@ public class AuthenticationController {
 		return ResponseBuilder.build(ResponseEnumsDemo.SIMPLE_SUCCESS, res);
 
 	}
-
 }

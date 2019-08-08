@@ -23,6 +23,12 @@
 
     <!-- eureka server: 提供服务发现与服务注册 -->
     <dependencies>
+
+        <dependency>
+            <groupId>com.free.system</groupId>
+            <artifactId>response</artifactId>
+        </dependency>
+
         <!-- 监控端点, 采集应用指标 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

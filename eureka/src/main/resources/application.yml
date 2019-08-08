@@ -1,3 +1,5 @@
+env: dev
+version: 1.0.0
 spring:
   application:
     name: eureka

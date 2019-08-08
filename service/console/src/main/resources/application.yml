@@ -1,3 +1,6 @@
+env: dev
+version: 1.0.0
+
 #服务配置
 server:
   #服务端口

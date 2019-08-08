@@ -1,3 +1,7 @@
+env: dev
+
+version: 1.0.0
+
 spring:
   application:
     name: admin
@@ -9,10 +13,12 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:19191/eureka/
+      
 #服务调用配置
 feign:
   hystrix:
     enabled: true
+    
 #todo://服务暴露: 线上修改
 management:
   endpoints:
