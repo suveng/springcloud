@@ -13,6 +13,8 @@ spring:
                   username: suwenguang
                   password: suwenguang
                   basedir: /data/config/cloud
+                  skip-ssl-validation: true
+                  default-label: master
 #todo://服务暴露: 线上修改
 management:
   endpoints:

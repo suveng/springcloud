@@ -6,6 +6,7 @@ import com.free.system.common.response.ResponseEnums;
 import com.free.system.common.response.ResponseEnumsDemo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,6 +20,7 @@ import javax.servlet.http.HttpServletRequest;
  **/
 @RestController
 @Slf4j
+@RefreshScope
 public class AuthenticationController {
 	@Value("${env}")
 	private String env;
