@@ -23,6 +23,7 @@
     - `Feign`
     - `Hystrix`
     - `Spring Config`
+    - `bus 总线动态刷新配置`
 - [`MyBatis`](http://www.mybatis.org/mybatis-3/zh/index.html) 
 - [`Redis 5.0`](https://redis.io/)
 - [`MySQL 5.7`](https://www.mysql.com/)
@@ -43,10 +44,14 @@
 服务启动顺序
 
 1. `eureka`
-2. `gateway`
+2. `admin` , `config`
 3. 任意一个`service`
+4. `gateway`
 
-### 测试部署
+> 注意: 配置 MySQL 路径, rabbitMQ/kafka路径
+
+### 上线部署
+咨询本人
 
 ## 测试策略
 
