@@ -12,6 +12,7 @@
 
 ## 技术选型
 
+- `git flow`
 - [`JDK1.8`](https://www.oracle.com/)
 - [`Spring Cloud`](https://www.docs4dev.com/zh)
     - `Spring Boot` 
