@@ -7,6 +7,10 @@ spring:
         enabled: true
         service-id: CONFIG
       profile: dev
+    stream:
+      kafka:
+        binder:
+          brokers: http://127.0.0.1:9092
 #服务注册配置
 eureka:
   client:

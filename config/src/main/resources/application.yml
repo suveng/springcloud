@@ -6,15 +6,19 @@ spring:
   application:
     name: config
   cloud:
-      config:
-          server:
-              git:
-                  uri: https://192.168.9.231/suwenguang/cloud-config.git
-                  username: suwenguang
-                  password: suwenguang
-                  basedir: /data/config/cloud
-                  skip-ssl-validation: true
-                  default-label: master
+    config:
+      server:
+        git:
+          uri: https://192.168.9.231/suwenguang/cloud-config.git
+          username: suwenguang
+          password: suwenguang
+          basedir: /data/config/cloud
+          skip-ssl-validation: true
+          default-label: master
+    stream:
+      kafka:
+        binder:
+          brokers: http://127.0.0.1:9092
 #todo://服务暴露: 线上修改
 management:
   endpoints:
