@@ -17,4 +17,4 @@ git push gitlab develop
 
 git push --tags origin
 git push --tags github
-git push --tags gitlabx
+git push --tags gitlab
