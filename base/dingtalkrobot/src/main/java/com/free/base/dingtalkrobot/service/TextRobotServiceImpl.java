@@ -1,5 +1,6 @@
 package com.free.base.dingtalkrobot.service;
 
+import cn.hutool.core.util.ArrayUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.http.HttpException;
 import cn.hutool.http.HttpRequest;
@@ -11,9 +12,7 @@ import com.free.base.dingtalkrobot.model.DingTalkVo;
 import com.free.base.dingtalkrobot.model.ServiceResult;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * description:
@@ -21,7 +20,7 @@ import java.util.Queue;
  * @version 1.0.0
  **/
 @Slf4j
-public class TextRobotServiceImpl extends AbstractInitRobot implements IRobotService,InitRobot {
+public class TextRobotServiceImpl extends AbstractInitRobot implements IRobotService, InitRobot {
 	private String link;
 
 	@Override
@@ -32,16 +31,35 @@ public class TextRobotServiceImpl extends AbstractInitRobot implements IRobotSer
 
 	@Override
 	public ServiceResult<DingTalkResult> sendMsg(String content) {
-		return sendMsg("text", content);
+		return sendMsgType("text", content);
 	}
 
 	@Override
-	public ServiceResult<DingTalkResult> sendMsg(String msgtype, String content) {
-		return null;
+	public ServiceResult<DingTalkResult> sendMsgAt(String content, String atMobiles) {
+		//校验
+		if (!StrUtil.hasBlank(atMobiles)) {
+			return sendMsgType("text", content, new ArrayList<>(Arrays.asList(atMobiles.split(","))), false);
+		}
+		return sendMsgType("text", content);
 	}
 
 	@Override
-	public ServiceResult<DingTalkResult> sendMsg(String msgtype, String content, List<String> atMobiles, Boolean isAtALl) {
+	public ServiceResult<DingTalkResult> sendMsgAt(String content, List<String> atMobiles) {
+		return sendMsgType("text",content,atMobiles,false);
+	}
+
+	@Override
+	public ServiceResult<DingTalkResult> sendMsgAtAll(String content) {
+		return sendMsgType("text", content,null,true);
+	}
+
+	@Override
+	public ServiceResult<DingTalkResult> sendMsgType(String msgtype, String content) {
+		return sendMsgType(msgtype, content, null, false);
+	}
+
+	@Override
+	public ServiceResult<DingTalkResult> sendMsgType(String msgtype, String content, List<String> atMobiles, Boolean isAtALl) {
 		ServiceResult<DingTalkResult> res = new ServiceResult<>();
 		//校验
 		long start = System.nanoTime();
@@ -62,7 +80,7 @@ public class TextRobotServiceImpl extends AbstractInitRobot implements IRobotSer
 			paasLog.setStatus(true);
 			paasLog.setResponse(result);
 
-			res.setData(JSON.parseObject(result,DingTalkResult.class));
+			res.setData(JSON.parseObject(result, DingTalkResult.class));
 		} catch (HttpException e) {
 			paasLog.setStatus(false);
 			paasLog.setResponse(e.getMessage());

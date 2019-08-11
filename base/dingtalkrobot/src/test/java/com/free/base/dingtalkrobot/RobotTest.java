@@ -18,8 +18,9 @@ public class RobotTest {
 
 	@Test
 	public void build() {
-		IRobotService init = Robot.build(RobotEnums.TEXT_ROBOT).init("https://oapi.dingtalk.com/robot/send?access_token=98e610ee1f6aa45e508641e525c2d02322cc4e061b3c670da50da00d64b79e01");
-		ServiceResult<DingTalkResult> text = init.sendMsg("text", "策略模式+工厂模式", null, false);
+		ServiceResult<DingTalkResult> text = Robot.build(RobotEnums.TEXT_ROBOT)
+													.init("https://oapi.dingtalk.com/robot/send?access_token=xx")
+													.sendMsg("策略模式+工厂模式");
 		System.out.println(JSON.toJSONString(text));
 	}
 }
