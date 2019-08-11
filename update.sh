@@ -1,4 +1,12 @@
 #!/usr/bin/env bash
+git pull origin master
+git pull origin develop
+
+git checkout master
+git merge develop
+
+git checkout develop
+
 git push origin master
 git push github master
 git push gitlab master
