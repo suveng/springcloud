@@ -2,8 +2,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- 指定父pom, 在父pom中配置子模块的公共依赖 -->
+    <parent>
+        <groupId>com.free.system</groupId>
+        <artifactId>cloud</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
 
-    <groupId>com.free.system</groupId>
     <artifactId>base</artifactId>
     <version>1.0</version>
     <modelVersion>4.0.0</modelVersion>
@@ -12,6 +17,9 @@
     <modules>
         <module>response</module>
         <module>log</module>
+        <module>dingtalkrobot</module>
+        <module>mail</module>
+        <module>qqrobot</module>
     </modules>
 
     <dependencies>
