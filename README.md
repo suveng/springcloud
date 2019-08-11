@@ -2,13 +2,37 @@
 
 ## 项目简介
 
+`springcloud` 脚手架
+
+## 目录结构说明
+- `admin` 监控中心
 - `base`: 基础复用包
+- `config` 统一配置中心
+- `db-gen` `mybatis` 逆向工具
 - `eureka`: 服务注册与服务发现
 - `gateway`: 网关
 - `service`: 服务
     - `common`: 重用`mapper`等等
-    - `user`: 用户服务
-    - `console`: 管理后台服务
+    - `console`: 管理后台服务,后台模板服务
+    - `order` 模拟订单服务,实际无意义
+    - `user`: 模拟用户服务,实际无意义
+
+## 版本更新日志
+
+- 0.0.2
+    - 变更总线队列为`kafka`
+    - 使用 `git flow` 规范 
+    
+- 0.0.1
+    - 引入`eureka`服务注册中心
+    - 引入`gateway`网关
+    - `gateway`引入`spring security`鉴权
+    - 引入`feign`服务间通信
+    - 引入`hystrix`熔断
+    - 引入 `spring-boot-admin`监控
+    - 引入 `spring config server` 统一配置中心
+    - 引入 `rabbitmq` bus总线
+    - `console` 使用 `Xadmin` 后台模板
 
 ## 技术选型
 
@@ -24,7 +48,7 @@
     - `Feign`
     - `Hystrix`
     - `Spring Config`
-    - `bus 总线动态刷新配置`
+    - `kafka` `bus` 总线动态刷新配置
 - [`MyBatis`](http://www.mybatis.org/mybatis-3/zh/index.html) 
 - [`Redis 5.0`](https://redis.io/)
 - [`MySQL 5.7`](https://www.mysql.com/)
