@@ -1,4 +1,4 @@
-package com.free.system.user.mapper;
+package com.free.system.user.service;
 
 import com.free.system.user.model.User;
 
@@ -7,9 +7,9 @@ import java.util.List;
 /**
  * description:
  * @author suwenguang
- * @date 19-7-21
+ * @date 2019-08-12
  * @version 1.0.0
  **/
-public interface UserMapper {
+public interface IUserService {
 	List<User> getUser();
 }

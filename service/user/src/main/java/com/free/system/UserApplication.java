@@ -33,7 +33,7 @@ import java.util.List;
 @EnableDiscoveryClient
 @EnableHystrixDashboard
 @SpringBootApplication
-@MapperScan("com.free.system.service.**.mapper")
+@MapperScan("com.free.system.**.mapper")
 public class UserApplication {
 	public static void main(String[] args) {
 		System.out.println("########用户服务启动!########");
