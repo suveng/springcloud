@@ -17,9 +17,7 @@
     <modules>
         <module>response</module>
         <module>log</module>
-        <module>dingtalkrobot</module>
-        <module>mail</module>
-        <module>qqrobot</module>
+        <module>outer-message</module>
     </modules>
 
     <dependencies>
