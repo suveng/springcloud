@@ -4,7 +4,7 @@ spring:
   application:
     name: eureka
 server:
-  port: 19191
+  port: 20201
 
 eureka:
   instance:

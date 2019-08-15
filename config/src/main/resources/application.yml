@@ -1,7 +1,7 @@
 env: dev
 version: 0.0.2
 server:
-  port: 19197
+  port: 20190
 spring:
   application:
     name: config
@@ -28,7 +28,7 @@ management:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:19191/eureka/
+      defaultZone: http://localhost:20200/eureka/
 logging:
   config: classpath:logback-spring.xml
   file: /data/log/cloud/config/info.config.log
