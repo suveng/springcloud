@@ -48,7 +48,7 @@ eureka:
     register-with-eureka: true
     # 设置 Eureka Server 所在的地址，查询服务和注册服务都需要依赖这个地址
     service-url:
-      defaultZone: http://suveng-cloud-232:20201/eureka/,http://suveng-cloud-239:20201/eureka/
+      defaultZone: http://192.168.9.232:20201/eureka/,http://192.168.9.239:20201/eureka/
   server:
     enable-self-preservation: true
     eviction-interval-timer-in-ms: 400
@@ -78,7 +78,7 @@ eureka:
     register-with-eureka: true
     # 设置 Eureka Server 所在的地址，查询服务和注册服务都需要依赖这个地址
     service-url:
-      defaultZone: http://suveng-cloud-232:20201/eureka/,http://suveng-cloud-239:20201/eureka/
+      defaultZone: http://192.168.9.232:20201/eureka/,http://192.168.9.239:20201/eureka/
   server:
     enable-self-preservation: true
     eviction-interval-timer-in-ms: 400

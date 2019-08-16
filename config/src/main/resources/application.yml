@@ -32,7 +32,7 @@ management:
 eureka:
   client:
     service-url:
-      defaultZone: http://192.168.9.232:20201/eureka/
+      defaultZone: http://localhost:20201/eureka/
   instance:
     hostname: localhost
 logging:
@@ -66,7 +66,7 @@ management:
 eureka:
   client:
     service-url:
-      defaultZone: http://192.168.9.232:20201/eureka/
+      defaultZone: http://192.168.9.239:20201/eureka/
   instance:
     hostname: 192.168.9.233
 logging:
@@ -99,7 +99,7 @@ management:
 eureka:
   client:
     service-url:
-      defaultZone: http://192.168.9.232:20201/eureka/
+      defaultZone: http://192.168.9.239:20201/eureka/
   instance:
     hostname: 192.168.9.233
 logging:
