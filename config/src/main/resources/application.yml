@@ -1,10 +1,15 @@
-env: dev
-version: 0.0.2
 server:
   port: 20190
 spring:
   application:
     name: config
+  profiles:
+    active: dev
+
+---
+
+spring:
+  profiles: dev
   cloud:
     config:
       server:
@@ -18,8 +23,7 @@ spring:
     stream:
       kafka:
         binder:
-          brokers: http://127.0.0.1:9092
-#todo://服务暴露: 线上修改
+          brokers: http://192.168.9.233:9092
 management:
   endpoints:
     web:
@@ -28,7 +32,76 @@ management:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:20200/eureka/
+      defaultZone: http://192.168.9.232:20201/eureka/
+  instance:
+    hostname: localhost
+logging:
+  config: classpath:logback-spring.xml
+  file: /data/log/cloud/config/info.config.log
+
+
+---
+
+spring:
+  profiles: test
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://192.168.9.231/suwenguang/cloud-config.git
+          username: suwenguang
+          password: suwenguang
+          basedir: /data/config/cloud
+          skip-ssl-validation: true
+          default-label: master
+    stream:
+      kafka:
+        binder:
+          brokers: http://192.168.9.233:9092
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.9.232:20201/eureka/
+  instance:
+    hostname: 192.168.9.233
+logging:
+  config: classpath:logback-spring.xml
+  file: /data/log/cloud/config/info.config.log
+
+---
+
+spring:
+  profiles: pro
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://192.168.9.231/suwenguang/cloud-config.git
+          username: suwenguang
+          password: suwenguang
+          basedir: /data/config/cloud
+          skip-ssl-validation: true
+          default-label: master
+    stream:
+      kafka:
+        binder:
+          brokers: http://192.168.9.233:9092
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.9.232:20201/eureka/
+  instance:
+    hostname: 192.168.9.233
 logging:
   config: classpath:logback-spring.xml
   file: /data/log/cloud/config/info.config.log
