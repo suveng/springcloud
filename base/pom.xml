@@ -15,9 +15,10 @@
 
     <packaging>pom</packaging>
     <modules>
-        <module>response</module>
-        <module>log</module>
-        <module>outer-message</module>
+        <module>currency.log</module>
+        <module>currency.result</module>
+        <module>currency.message</module>
+        <module>currency.lock</module>
     </modules>
 
     <dependencies>
