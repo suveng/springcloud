@@ -46,7 +46,14 @@ public class ConsoleApplication {
 		FastJsonHttpMessageConverter fastConverter = new FastJsonHttpMessageConverter();
 		//2、添加fastjson的配置信息
 		FastJsonConfig fastJsonConfig = new FastJsonConfig();
-		fastJsonConfig.setSerializerFeatures(SerializerFeature.PrettyFormat);
+		fastJsonConfig.setSerializerFeatures(SerializerFeature.PrettyFormat,
+			SerializerFeature.WriteNullStringAsEmpty,
+			SerializerFeature.WriteNullBooleanAsFalse,
+			SerializerFeature.WriteNullNumberAsZero,
+			SerializerFeature.WriteMapNullValue,
+			SerializerFeature.WriteNullListAsEmpty,
+			SerializerFeature.WriteDateUseDateFormat
+		);
 		//3、在convert中添加配置信息
 		fastConverter.setFastJsonConfig(fastJsonConfig);
 		//4、将convert添加到converters中
