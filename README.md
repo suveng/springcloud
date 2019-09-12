@@ -7,12 +7,15 @@
 ## 目录结构说明
 - `admin` 监控中心
 - `base`: 基础复用包
-- `config` 统一配置中心
-- `db-gen` `mybatis` 逆向工具
-- `eureka`: 服务注册与服务发现
-- `gateway`: 网关
-- `service`: 服务
-    - `common`: 重用`mapper`等等
+    - `result` 返回层封装
+    - `log` 日志层封装, 方便运维监控
+    - `message` 外部社交消息告警
+    - `lock` 并发锁,目前仅有redis
+- `config` 统一配置中心,目前使用 kafka 作为 bus 通知
+- `eureka`: 服务注册与服务发现,偏AP理论,可能不采用
+- `zuul`: 网关,流量转发
+- `service`: 服务层
+    - `common`: 重用类等等
     - `console`: 管理后台服务,后台模板服务
     - `order` 模拟订单服务,实际无意义
     - `user`: 模拟用户服务,实际无意义
@@ -23,7 +26,6 @@
     - 变更总线队列为`kafka`
 - 0.0.2
     - 使用 `git flow` 规范 
-    
 - 0.0.1
     - 引入`eureka`服务注册中心
     - 引入`gateway`网关
