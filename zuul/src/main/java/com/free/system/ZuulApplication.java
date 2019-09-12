@@ -6,7 +6,6 @@ import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
 import org.springframework.cloud.client.SpringCloudApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.MediaType;
@@ -23,10 +22,10 @@ import java.util.List;
  **/
 @EnableZuulProxy
 @SpringCloudApplication
-public class GatewayApplication {
+public class ZuulApplication {
 	public static void main(String[] args) {
 		System.out.println("########服务网关启动!########");
-		SpringApplication.run(GatewayApplication.class, args);
+		SpringApplication.run(ZuulApplication.class, args);
 	}
 
 	@Bean

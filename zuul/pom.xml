@@ -18,10 +18,18 @@
     <packaging>jar</packaging>
 
     <!-- 模块名及描述信息 -->
-    <name>gateway</name>
-    <description>gateway</description>
+    <name>zuul</name>
+    <description>zuul</description>
 
     <dependencies>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
         <!--rabbit bus-->
         <!--<dependency>-->
             <!--<groupId>org.springframework.cloud</groupId>-->
