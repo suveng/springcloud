@@ -19,6 +19,7 @@ public class LogDetail implements ILogDetail {
 	 **/
 	private String threadName;
 
+	private String method;
 	/**
 	 * 标签
 	 **/
@@ -263,7 +264,9 @@ public class LogDetail implements ILogDetail {
 			String str = "默认";
 			requsetIdStr= str;
 		}
-
-		return String.format("[%s]:%s:%s:requestid=%s", tagStr, stageStr, msgStr, requsetIdStr);
+		if (StrUtil.isBlank(method)){
+			method="默认";
+		}
+		return String.format("[%s]:method=%s:stage=%s:msg=%s:requestid=%s", tagStr,method, stageStr, msgStr, requsetIdStr);
 	}
 }
