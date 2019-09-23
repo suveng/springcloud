@@ -14,11 +14,13 @@ import java.util.concurrent.TimeUnit;
  * @author suwenguang
  * @version 1.0.0
  **/
-@Component
 @Slf4j
 public class RedisLock {
-	@Autowired
-	private StringRedisTemplate redisTemplate;
+	private final StringRedisTemplate redisTemplate;
+
+	public RedisLock(StringRedisTemplate redisTemplate) {
+		this.redisTemplate = redisTemplate;
+	}
 
 
 	/**

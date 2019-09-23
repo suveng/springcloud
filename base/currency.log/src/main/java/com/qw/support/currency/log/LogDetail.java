@@ -10,8 +10,7 @@ import cn.hutool.core.util.StrUtil;
  * @version 1.0.0
  */
 @SuppressWarnings("all")
-public class LogDetail implements ILogDetail {
-	private static LogDetail logDetail = null;
+public class LogDetail {
 
 
 	/**
@@ -19,6 +18,9 @@ public class LogDetail implements ILogDetail {
 	 **/
 	private String threadName;
 
+	/**
+	 * 方法名称
+	 */
 	private String method;
 	/**
 	 * 标签
@@ -45,110 +47,10 @@ public class LogDetail implements ILogDetail {
 	 */
 	private String userId;
 
-	/**
-	 * <p>Getter for the field <code>userId</code>.</p>
-	 *
-	 * @return a {@link String} object.
-	 */
-	public String getUserId() {
-		return userId;
-	}
-
-	/**
-	 * <p>Setter for the field <code>userId</code>.</p>
-	 *
-	 * @param userId a {@link String} object.
-	 */
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-
-	/**
-	 * <p>Setter for the field <code>threadName</code>.</p>
-	 *
-	 * @param threadName a {@link String} object.
-	 * @return a {@link LogDetail} object.
-	 */
-	public LogDetail setThreadName(String threadName) {
-		this.threadName = threadName;
-		return this;
-	}
-
-	/**
-	 * <p>Setter for the field <code>stage</code>.</p>
-	 *
-	 * @param stage a {@link String} object.
-	 * @return a {@link LogDetail} object.
-	 */
-	public LogDetail setStage(String stage) {
-		this.stage = stage;
-		return this;
-	}
-
-	/**
-	 * <p>Setter for the field <code>tag</code>.</p>
-	 *
-	 * @param tag a {@link String} object.
-	 * @return a {@link LogDetail} object.
-	 */
-	public LogDetail setTag(String tag) {
-		this.tag = tag;
-		return this;
-
-	}
-
-	/**
-	 * <p>Setter for the field <code>msg</code>.</p>
-	 *
-	 * @param msg a {@link String} object.
-	 * @return a {@link LogDetail} object.
-	 */
-	public LogDetail setMsg(String msg) {
-		this.msg = msg;
-		return this;
-
-	}
-
-	/**
-	 * <p>Setter for the field <code>requsetId</code>.</p>
-	 *
-	 * @param requsetId a {@link String} object.
-	 * @return a {@link LogDetail} object.
-	 */
-	public LogDetail setRequsetId(String requsetId) {
-		this.requsetId = requsetId;
-		return this;
-
-	}
-
-	/**
-	 * {@inheritDoc}
-	 *
-	 * 说明: 设置msg,采用format
-	 * @author suwenguang
-	 */
-	@Override
-	public LogDetail setMsg(String format, Object... args) {
-		this.msg = String.format(format, args);
-		return this;
-
-	}
-
-
-	/**
-	 * <p>Constructor for LogDetail.</p>
-	 */
 	public LogDetail() {
 		this.threadName = Thread.currentThread().getName();
 	}
 
-	/**
-	 * <p>Constructor for LogDetail.</p>
-	 *
-	 * @param tag a {@link String} object.
-	 * @param requsetId a {@link String} object.
-	 * @param stage a {@link String} object.
-	 */
 	public LogDetail(String tag, String requsetId, String stage) {
 		this.tag = tag;
 		this.requsetId = requsetId;
@@ -157,89 +59,31 @@ public class LogDetail implements ILogDetail {
 	}
 
 	/**
-	 * <p>Getter for the field <code>threadName</code>.</p>
-	 *
-	 * @return a {@link String} object.
+	 * 获取当前线程的logdetail对象
+	 * @return LogDetail
 	 */
-	public String getThreadName() {
-		return threadName;
-	}
-
-
-	/**
-	 * <p>Getter for the field <code>stage</code>.</p>
-	 *
-	 * @return a {@link String} object.
-	 */
-	public String getStage() {
-		return stage;
-	}
-
-
-	/**
-	 * <p>Getter for the field <code>tag</code>.</p>
-	 *
-	 * @return a {@link String} object.
-	 */
-	public String getTag() {
-		return tag;
-	}
-
-
-	/**
-	 * <p>Getter for the field <code>msg</code>.</p>
-	 *
-	 * @return a {@link String} object.
-	 */
-	public String getMsg() {
-		return msg;
-	}
-
-
-	/**
-	 * <p>Getter for the field <code>requsetId</code>.</p>
-	 *
-	 * @return a {@link String} object.
-	 */
-	public String getRequsetId() {
-		return requsetId;
-	}
-
-
-	/**
-	 * {@inheritDoc}
-	 *
-	 * 说明: 获取系统error的返回信息
-	 * @author suwenguang
-	 */
-	@Override
-	public String getRes() {
-		return String.format("%s,requestid:%s", this.msg, this.requsetId);
-	}
-
-
-	/**
-	 * 说明: 工厂方法,单例模式
-	 *
-	 * @author suwenguang
-	 * @return a {@link LogDetail} object.
-	 */
-	public static LogDetail build() {
-		if (logDetail == null) {
-			synchronized (ILogDetail.class) {
-				if (logDetail == null) {
-					return new LogDetail();
-				}
-			}
-		}
+	public LogDetail get(){
+		LogDetail logDetail = LogDetailThreadLocal.logDetailThreadLocal.get();
+		logDetail.setThreadName(Thread.currentThread().getName());
 		return logDetail;
 	}
 
 	/**
-	 * {@inheritDoc}
-	 *
-	 * 说明: 日志规范
-	 * @author suwenguang
+	 * 格式化日志
+	 * @param format 格式demo
+	 * @param args 参数
+	 * @return LogDetail
+	 */
+	public LogDetail setMsg(String format, Object... args) {
+		this.msg = String.format(format, args);
+		return this;
+
+	}
+
+
+	/**
+	 * 格式化输出
+	 * @return String
 	 */
 	@Override
 	public String toString() {
@@ -247,26 +91,107 @@ public class LogDetail implements ILogDetail {
 		String stageStr = this.stage;
 		String msgStr = this.msg;
 		String requsetIdStr = this.requsetId;
+		String methodStr = this.method;
 
-		if (StrUtil.isBlank(tagStr)){
-			String str = "默认";
-			tagStr= str;
+		if (StrUtil.isBlank(tagStr)) {
+			tagStr = "默认";
 		}
-		if (StrUtil.isBlank(stageStr)){
-			String str = "默认";
-			stageStr= str;
+		if (StrUtil.isBlank(stageStr)) {
+			stageStr = "默认";
 		}
-		if (StrUtil.isBlank(msgStr)){
-			String str = "默认";
-			msgStr= str;
+		if (StrUtil.isBlank(msgStr)) {
+			msgStr = "默认";
 		}
-		if (StrUtil.isBlank(requsetIdStr)){
-			String str = "默认";
-			requsetIdStr= str;
+		if (StrUtil.isBlank(requsetIdStr)) {
+			requsetIdStr = "默认";
 		}
-		if (StrUtil.isBlank(method)){
-			method="默认";
+		if (StrUtil.isBlank(method)) {
+			methodStr = "默认";
 		}
-		return String.format("[%s]:method=%s:stage=%s:msg=%s:requestid=%s", tagStr,method, stageStr, msgStr, requsetIdStr);
+		return String.format("[%s]:method=%s:stage=%s:msg=%s:requestid=%s", tagStr, methodStr, stageStr, msgStr, requsetIdStr);
 	}
+
+	/**
+	 * 获取简单的返回
+	 * @return
+	 */
+	public String getRes() {
+		return String.format("%s,requestid:%s", this.msg, this.requsetId);
+	}
+
+	public String getMethod() {
+		return method;
+	}
+
+	public LogDetail setMethod(String method) {
+		this.method = method;
+		return this;
+	}
+
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	public LogDetail setThreadName(String threadName) {
+		this.threadName = threadName;
+		return this;
+	}
+
+
+	public LogDetail setStage(String stage) {
+		this.stage = stage;
+		return this;
+	}
+
+
+	public LogDetail setTag(String tag) {
+		this.tag = tag;
+		return this;
+
+	}
+
+
+	public LogDetail setMsg(String msg) {
+		this.msg = msg;
+		return this;
+
+	}
+
+	public LogDetail setRequsetId(String requsetId) {
+		this.requsetId = requsetId;
+		return this;
+
+	}
+
+
+	public String getThreadName() {
+		return threadName;
+	}
+
+
+	public String getStage() {
+		return stage;
+	}
+
+
+	public String getTag() {
+		return tag;
+	}
+
+
+	public String getMsg() {
+		return msg;
+	}
+
+
+	public String getRequsetId() {
+		return requsetId;
+	}
+
+
 }
