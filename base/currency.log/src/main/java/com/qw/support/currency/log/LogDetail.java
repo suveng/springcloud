@@ -47,10 +47,19 @@ public class LogDetail {
 	 */
 	private String userId;
 
+	/**
+	 * 无参构造器,默认设置thread name
+	 */
 	public LogDetail() {
 		this.threadName = Thread.currentThread().getName();
 	}
 
+	/**
+	 * 设置tag,requestid,stage,thread name的构造器
+	 * @param tag 日志标签
+	 * @param requsetId 唯一标识id
+	 * @param stage 处理阶段
+	 */
 	public LogDetail(String tag, String requsetId, String stage) {
 		this.tag = tag;
 		this.requsetId = requsetId;
@@ -62,7 +71,7 @@ public class LogDetail {
 	 * 获取当前线程的logdetail对象
 	 * @return LogDetail
 	 */
-	public LogDetail get(){
+	public static LogDetail get() {
 		LogDetail logDetail = LogDetailThreadLocal.logDetailThreadLocal.get();
 		logDetail.setThreadName(Thread.currentThread().getName());
 		return logDetail;
@@ -87,28 +96,23 @@ public class LogDetail {
 	 */
 	@Override
 	public String toString() {
-		String tagStr = this.tag;
-		String stageStr = this.stage;
-		String msgStr = this.msg;
-		String requsetIdStr = this.requsetId;
-		String methodStr = this.method;
-
-		if (StrUtil.isBlank(tagStr)) {
-			tagStr = "默认";
+		StringBuffer stringBuffer = new StringBuffer();
+		if (StrUtil.isNotBlank(this.tag)) {
+			stringBuffer.append("[").append(this.tag).append("]##");
 		}
-		if (StrUtil.isBlank(stageStr)) {
-			stageStr = "默认";
+		if (StrUtil.isNotBlank(this.stage)) {
+			stringBuffer.append(this.stage).append("##");
 		}
-		if (StrUtil.isBlank(msgStr)) {
-			msgStr = "默认";
+		if (StrUtil.isNotBlank(this.method)) {
+			stringBuffer.append(this.method).append("##");
 		}
-		if (StrUtil.isBlank(requsetIdStr)) {
-			requsetIdStr = "默认";
+		if (StrUtil.isNotBlank(msg)) {
+			stringBuffer.append(this.msg).append("##");
 		}
-		if (StrUtil.isBlank(method)) {
-			methodStr = "默认";
+		if (StrUtil.isNotBlank(this.requsetId)) {
+			stringBuffer.append(this.requsetId).append("##");
 		}
-		return String.format("[%s]:method=%s:stage=%s:msg=%s:requestid=%s", tagStr, methodStr, stageStr, msgStr, requsetIdStr);
+		return StrUtil.isBlank(stringBuffer.toString()) ? "空串" : stringBuffer.toString();
 	}
 
 	/**
