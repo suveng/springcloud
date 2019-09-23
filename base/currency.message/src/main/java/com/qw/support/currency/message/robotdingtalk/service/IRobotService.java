@@ -5,6 +5,8 @@ import com.qw.support.currency.message.robotdingtalk.model.bo.DingTalkResult;
 import com.qw.support.currency.result.ServiceResult;
 
 import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeoutException;
 
 /**
  * description:
@@ -21,10 +23,22 @@ public interface IRobotService {
 	ServiceResult<DingTalkResult> sendMsg(String content);
 
 	/**
+	 * 说明: 异步发送消息,默认文本类型
+	 * @author suwenguang
+	 */
+	void sendMsgAsync(String content) throws InterruptedException, ExecutionException, TimeoutException;
+
+	/**
 	 * 说明: 发送消息,默认文本类型,at特定人手机号码 string:("1XXXXX","2XXXXX")
 	 * @author suwenguang
 	 */
 	ServiceResult<DingTalkResult> sendMsgAt(String content, String atMobiles);
+
+	/**
+	 * 说明: 异步发送消息,默认文本类型,at特定人手机号码 string:("1XXXXX","2XXXXX")
+	 * @author suwenguang
+	 */
+	void sendMsgAtAsync(String content, String atMobiles) throws InterruptedException, ExecutionException, TimeoutException;
 
 
 	/**

@@ -23,6 +23,13 @@
 
     <dependencies>
         <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
             <groupId>com.qw.support</groupId>
             <artifactId>currency.result</artifactId>
             <version>${currency.result.version}</version>

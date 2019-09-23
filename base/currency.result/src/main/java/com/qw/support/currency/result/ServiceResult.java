@@ -15,24 +15,16 @@ public class ServiceResult<T> extends AbstractResult {
 	/**
 	 * 内部方法返回结果
 	 */
-	private boolean result;
+	private boolean pass;
 
 	/**
 	 * 内部方法返回的数据
 	 */
 	private T data;
 
-	/**
-	 * <p>Constructor for ServiceResult.</p>
-	 */
 	public ServiceResult() {
 	}
 
-	/**
-	 * <p>Constructor for ServiceResult.</p>
-	 *
-	 * @param data a T object.
-	 */
 	public ServiceResult(T data) {
 		this.data = data;
 	}
