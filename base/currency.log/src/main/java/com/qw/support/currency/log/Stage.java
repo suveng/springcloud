@@ -9,6 +9,16 @@ package com.qw.support.currency.log;
  */
 @SuppressWarnings(value = "all")
 public interface Stage {
+
+
+	String CONSUMER = "消费数据";
+
+	String PRODUCER = "生产数据";
+
+	String AOP = "切面";
+
+	String FILTER = "过滤器";
+
 	String REQUEST = "接收请求";
 
 	String RESPONSE = "返回结果";

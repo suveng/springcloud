@@ -103,14 +103,11 @@ public class LogDetail {
 		if (StrUtil.isNotBlank(this.stage)) {
 			stringBuffer.append(this.stage).append("##");
 		}
-		if (StrUtil.isNotBlank(this.method)) {
-			stringBuffer.append(this.method).append("##");
-		}
 		if (StrUtil.isNotBlank(msg)) {
 			stringBuffer.append(this.msg).append("##");
 		}
 		if (StrUtil.isNotBlank(this.requsetId)) {
-			stringBuffer.append(this.requsetId).append("##");
+			stringBuffer.append("requestid:").append(this.requsetId);
 		}
 		return StrUtil.isBlank(stringBuffer.toString()) ? "空串" : stringBuffer.toString();
 	}
