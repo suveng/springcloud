@@ -13,15 +13,26 @@ import lombok.extern.slf4j.Slf4j;
  * @version 1.0.0
  */
 @Slf4j
+@SuppressWarnings("all")
 public class ResultBuilder {
 
 
 	/**
-	 * <p>build.</p>
-	 *
-	 * @param codeEnum a {@link CodeEnum} object.
-	 * @param data a {@link Object} object.
-	 * @return a {@link Result} object.
+	 * 根据serviceResult构造返回结果
+	 * @author suwenguang
+	 * @param serviceResult 服务结果
+	 * @return result
+	 */
+	public static Result build(ServiceResult serviceResult) {
+		return build(serviceResult.getCode(), serviceResult.getMsg(), serviceResult.getData());
+	}
+
+	/**
+	 * 根据枚举生成返回结果
+	 * @author suwenguang
+	 * @param codeEnum 系统代码
+	 * @param data  数据
+	 * @return result
 	 */
 	public static Result build(CodeEnum codeEnum, Object data) {
 		return build(codeEnum.getCode(), codeEnum.getMsg(), data);
@@ -29,12 +40,12 @@ public class ResultBuilder {
 
 
 	/**
-	 * <p>build.</p>
-	 *
-	 * @param code a int.
-	 * @param msg a {@link String} object.
-	 * @param data a {@link Object} object.
-	 * @return a {@link Result} object.
+	 * 直接构造
+	 * @author suwenguang
+	 * @param code 系统代码
+	 * @param data  数据
+	 * @param msg 说明
+	 * @return result
 	 */
 	public static Result build(int code, String msg, Object data) {
 		LogDetail logDetail = LogDetailThreadLocal.logDetailThreadLocal.get();

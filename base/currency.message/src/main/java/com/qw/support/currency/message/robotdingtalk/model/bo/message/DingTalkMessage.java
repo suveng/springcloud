@@ -2,6 +2,7 @@ package com.qw.support.currency.message.robotdingtalk.model.bo.message;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.annotation.PostConstruct;
@@ -11,19 +12,11 @@ import javax.annotation.PostConstruct;
  * @author suwenguang
  * @version 1.0.0
  **/
+@EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class DingTalkMessage implements IMessage {
-	private String app;
-
-	private String phone;
-
-	private String profile;
-
-	private String link;
-
-	private String content;
+public class DingTalkMessage extends BaseMessage {
 
 	public DingTalkMessage(String profile, String content) {
 		this.profile = profile;

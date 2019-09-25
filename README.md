@@ -59,7 +59,9 @@
 - [`FastJSON`](https://github.com/alibaba/fastjson)
 - [`hutool`](https://github.com/looly/hutool)
 - [`X-admin`](https://gitee.com/daniuit/X-admin)
+- [jetBrains](https://www.jetbrains.com/?from=https://github.com/suveng/springcloud)
 
+![](https://gitee.com/suveng/upic/raw/master/jetbrains-variant-3.png)
 ## 构建
 
 - `mvn clean install -Dmaven.test.skip=true`
