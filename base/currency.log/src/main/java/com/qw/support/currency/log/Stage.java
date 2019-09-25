@@ -10,6 +10,7 @@ package com.qw.support.currency.log;
 @SuppressWarnings(value = "all")
 public interface Stage {
 
+	String PAAS = "服务调用";
 
 	String CONSUMER = "消费数据";
 
