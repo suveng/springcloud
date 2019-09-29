@@ -1,0 +1,12 @@
+#服务配置
+server:
+  #服务端口
+  port: 19195
+  #服务入口前缀
+  servlet:
+    context-path: /
+spring:
+  #spring应用配置
+  application:
+    #应用名称
+    name: console

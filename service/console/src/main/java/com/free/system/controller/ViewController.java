@@ -1,9 +1,8 @@
 package com.free.system.controller;
 
-import com.free.system.common.response.Response;
-import com.free.system.common.response.ResponseBuilder;
-import com.free.system.common.response.ResponseEnumsDemo;
-import org.springframework.beans.factory.annotation.Value;
+import com.qw.support.currency.result.CodeEnum;
+import com.qw.support.currency.result.Result;
+import com.qw.support.currency.result.ResultBuilder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -19,12 +18,6 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 @RequestMapping("/console")
 public class ViewController {
-	@Value("${env}")
-	private String env;
-
-	@Value("${version}")
-	private String version;
-
 	@RequestMapping("/index.html")
 	public String indexHtml() {
 		return "index";
@@ -36,7 +29,6 @@ public class ViewController {
 	}
 
 
-
 	/**
 	 * 说明: 获取实例基本信息
 	 * @author suwenguang
@@ -45,11 +37,11 @@ public class ViewController {
 	 */
 	@RequestMapping("/get")
 	@ResponseBody
-	public Response get(HttpServletRequest request) {
+	public Result get(HttpServletRequest request) {
 		String localAddr = request.getLocalAddr();
 		int localPort = request.getLocalPort();
-		String res = localAddr + "-" + localPort + "-" + this.env + "-" + this.version;
-		return ResponseBuilder.build(ResponseEnumsDemo.SIMPLE_SUCCESS, res);
+		String res = localAddr + "-" + localPort;
+		return ResultBuilder.build(CodeEnum.SUCCESS,res);
 	}
 
 }

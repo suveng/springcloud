@@ -1,8 +1,9 @@
 package com.free.system.exception;
 
 
-import com.free.system.common.response.Response;
-import com.free.system.common.response.ResponseEnums;
+import com.qw.support.currency.result.CodeEnum;
+import com.qw.support.currency.result.Result;
+import com.qw.support.currency.result.ResultBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -37,8 +38,8 @@ public class GlobalExceptionAdvice {
 	@ExceptionHandler({Exception.class})
 	@ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
 	@ResponseBody
-	public Response handleException(Exception e) {
+	public Result handleException(Exception e) {
 		logger.error("统一异常处理:系统发生异常", e);
-		return new Response(ResponseEnums.UNKNOWN_ERROR.getCode(), "系统发生异常", e.getMessage());
+		return ResultBuilder.build(CodeEnum.EXCEPTION, "");
 	}
 }

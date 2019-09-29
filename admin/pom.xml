@@ -14,10 +14,16 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.free.system</groupId>
-            <artifactId>response</artifactId>
+            <groupId>com.qw.support</groupId>
+            <artifactId>currency.result</artifactId>
+            <version>1.1</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.qw.support</groupId>
+            <artifactId>currency.log</artifactId>
+            <version>1.2</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>

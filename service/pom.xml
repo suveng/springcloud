@@ -13,15 +13,33 @@
     <artifactId>service</artifactId>
     <version>1.0</version>
     <modules>
-        <module>common</module>
-        <module>user</module>
         <module>console</module>
         <module>order</module>
     </modules>
     <packaging>pom</packaging>
 
     <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.qw.support</groupId>
+            <artifactId>currency.result</artifactId>
+            <version>1.1</version>
+        </dependency>
 
+        <dependency>
+            <groupId>com.qw.support</groupId>
+            <artifactId>currency.log</artifactId>
+            <version>1.2</version>
+        </dependency>
     </dependencies>
 
 

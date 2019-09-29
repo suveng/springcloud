@@ -1,7 +1,7 @@
 package com.free.system.filter;
 
 import com.alibaba.fastjson.JSON;
-import com.free.system.common.response.ResponseBuilder;
+import com.qw.support.currency.result.ResultBuilder;
 import org.springframework.web.filter.GenericFilterBean;
 
 import javax.servlet.FilterChain;
@@ -24,7 +24,7 @@ public class ResultExceptionTranslationFilter extends GenericFilterBean {
 		} catch (Exception ex) {
 			response.setContentType("application/json; charset=UTF-8");
 			response.setCharacterEncoding("UTF-8");
-			response.getWriter().println(JSON.toJSONString(ResponseBuilder.build("5000",ex.getMessage(), new Object())));
+			response.getWriter().println(JSON.toJSONString(ResultBuilder.build(5000, ex.getMessage(), new Object())));
 			response.getWriter().flush();
 		}
 	}

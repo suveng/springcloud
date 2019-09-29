@@ -14,8 +14,6 @@ import javax.annotation.PostConstruct;
  **/
 @EqualsAndHashCode(callSuper = true)
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class DingTalkMessage extends BaseMessage {
 
 	public DingTalkMessage(String profile, String content) {
@@ -37,6 +35,7 @@ public class DingTalkMessage extends BaseMessage {
 	 * author: suwenguang
 	 * date: 2019-08-23
 	 */
+	@Override
 	public String toBeautiful() {
 		StringBuilder stringBuilder = new StringBuilder();
 		stringBuilder.append("app:").append(this.app).append("\n\n");

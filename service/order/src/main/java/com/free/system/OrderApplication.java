@@ -8,7 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
 import org.springframework.cloud.openfeign.EnableFeignClients;
@@ -26,13 +25,11 @@ import java.util.List;
  * @version 1.0.0
  **/
 @EnableFeignClients
-@EnableEurekaClient
 @EnableHystrix
 @EnableCircuitBreaker
 @EnableDiscoveryClient
 @EnableHystrixDashboard
 @SpringBootApplication
-//@MapperScan("com.free.system.service.**.mapper")
 public class OrderApplication {
 	public static void main(String[] args) {
 		System.out.println("########订单服务启动!########");

@@ -15,25 +15,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
  **/
 @Controller
 public class ViewController implements ErrorController {
-    /** Field logger  */
-    private static final Logger logger = LoggerFactory.getLogger(ViewController.class);
 
-    /**
-     * 说明: 自定义error页面
-     * @author  suwenguang
-     * @date    2019-07-30
-     * @return  java.lang.String <- 返回类型
-     */
-    @RequestMapping("/error")
-    public String error() {
-        logger.info("用户访问了 /error");
-        return "404";
-    }
+	/**
+	 * 说明: 自定义error页面
+	 * @author suwenguang
+	 * @date 2019-07-30
+	 */
+	@RequestMapping("/error")
+	public String error() {
+		return "404";
+	}
 
 
-
-    @Override
-    public String getErrorPath() {
-        return "/error";
-    }
+	@Override
+	public String getErrorPath() {
+		return "/error";
+	}
 }

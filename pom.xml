@@ -9,12 +9,10 @@
     <version>1.0</version>
 
     <modules>
-        <module>eureka</module>
         <module>zuul</module>
         <module>service</module>
         <module>base</module>
         <module>admin</module>
-        <module>config</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -55,6 +53,30 @@
 
     <dependencyManagement>
         <dependencies>
+            <!--自定义类库-->
+            <dependency>
+                <groupId>com.qw.support</groupId>
+                <artifactId>currency.result</artifactId>
+                <version>1.1</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.qw.support</groupId>
+                <artifactId>currency.log</artifactId>
+                <version>1.2</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.qw.support</groupId>
+                <artifactId>currency.lock</artifactId>
+                <version>1.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.qw.support</groupId>
+                <artifactId>currency.message</artifactId>
+                <version>1.0</version>
+            </dependency>
 
             <!--第三方-->
             <dependency>
@@ -111,30 +133,6 @@
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>${mybatis-spring-boot-starter.version}</version>
-            </dependency>
-
-            <!--内部自定义-->
-            <dependency>
-                <groupId>com.free.system</groupId>
-                <artifactId>response</artifactId>
-                <version>1.0</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.free.system</groupId>
-                <artifactId>common</artifactId>
-                <version>1.0-SNAPSHOT</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.free.system</groupId>
-                <artifactId>base</artifactId>
-                <version>1.0</version>
-            </dependency>
-            <dependency>
-                <groupId>com.free.system</groupId>
-                <artifactId>log</artifactId>
-                <version>1.0</version>
             </dependency>
 
         </dependencies>
