@@ -1,4 +1,4 @@
-package com.free.system.model;
+package com.free.system.console.config;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
