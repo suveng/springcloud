@@ -1,9 +1,12 @@
 package com.free.system.order.controller;
 
+import com.free.system.order.model.Environment;
 import com.qw.support.currency.result.CodeEnum;
 import com.qw.support.currency.result.Result;
 import com.qw.support.currency.result.ResultBuilder;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,6 +23,8 @@ import javax.servlet.http.HttpServletRequest;
 @Slf4j
 public class OrderController {
 
+	@Autowired
+	Environment environment;
 	/**
 	 * 说明: 获取实例基本信息
 	 * @author suwenguang
@@ -29,7 +34,7 @@ public class OrderController {
 	public Result get(HttpServletRequest request) {
 		String localAddr = request.getLocalAddr();
 		int localPort = request.getLocalPort();
-		String res = localAddr + "-" + localPort;
+		String res = localAddr + "-" + localPort+"-"+environment.getVersion();
 		return ResultBuilder.build(CodeEnum.SUCCESS, res);
 	}
 

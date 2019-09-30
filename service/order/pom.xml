@@ -15,6 +15,13 @@
 
     <dependencies>
 
+        <!--使用config, 解析yml-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-logging</artifactId>
@@ -23,7 +30,7 @@
         <!--consul注册中心-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-consul-discovery</artifactId>
+            <artifactId>spring-cloud-starter-consul-all</artifactId>
         </dependency>
 
         <!-- 引入 Feign, 可以以声明的方式调用微服务 -->

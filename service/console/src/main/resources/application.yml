@@ -1,11 +1,4 @@
 spring:
-  cloud:
-    consul:
-      host: 192.168.9.233
-      port: 18500
-      discovery:
-        service-name: console-service #注册在consul上面的名字，在consul的调用中，是通过此名字调用的
-        register-health-check: true #健康检查，保证服务处于启动状态，建议开启
   #视图引擎配置
   freemarker:
     #视图存放目录
