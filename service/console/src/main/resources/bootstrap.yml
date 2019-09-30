@@ -21,4 +21,4 @@ spring:
         prefix: config
         enabled: true
         format: YAML
-        data-key: order
+        data-key: settings.yml

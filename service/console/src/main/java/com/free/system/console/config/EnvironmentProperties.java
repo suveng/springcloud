@@ -1,8 +1,7 @@
-package com.free.system.order.model;
+package com.free.system.console.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
 
 /**
  * env
@@ -11,7 +10,7 @@ import org.springframework.stereotype.Component;
  **/
 @ConfigurationProperties(prefix = "env")
 @Data
-public class Environment {
+public class EnvironmentProperties {
 	private String version;
 	private String author;
 }

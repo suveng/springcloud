@@ -1,6 +1,24 @@
-spring:
-  application:
-    name: gateway
 server:
   port: 20210
-
+  servlet:
+    context-path: /
+spring:
+  application:
+    name: zuul-service
+  cloud:
+    consul:
+      host: 192.168.9.233
+      port: 18500
+      discovery:
+        service-name: zuul-service #注册在consul上面的名字，在consul的调用中，是通过此名字调用的
+        register-health-check: true #健康检查，保证服务处于启动状态，建议开启
+      config:   # consul 配置中心
+        prefix: config
+        enabled: true
+        format: YAML
+        data-key: settings.yml
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

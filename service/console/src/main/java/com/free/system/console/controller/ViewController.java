@@ -1,41 +1,52 @@
-package com.free.system.order.controller;
+package com.free.system.console.controller;
 
-import com.free.system.order.config.EnvironmentProperties;
+import com.free.system.console.config.EnvironmentProperties;
 import com.qw.support.currency.result.CodeEnum;
 import com.qw.support.currency.result.Result;
 import com.qw.support.currency.result.ResultBuilder;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 
 /**
  * description:
  * @author suwenguang
- * @date 2019-07-30
+ * @date 2019-07-27
  * @version 1.0.0
  **/
-@RestController
-@RequestMapping("/order")
-@Slf4j
-public class OrderController {
-
+@Controller
+@RequestMapping("/console")
+public class ViewController {
 	@Autowired
-	EnvironmentProperties environmentProperties;
+	private EnvironmentProperties environmentProperties;
+
+	@RequestMapping("/index.html")
+	public String indexHtml() {
+		return "index";
+	}
+
+	@RequestMapping("/welcome.html")
+	public String welcomeHtml() {
+		return "welcome";
+	}
+
+
 	/**
 	 * 说明: 获取实例基本信息
 	 * @author suwenguang
 	 * @date 2019-08-08
+	 * @return com.free.system.common.response.Response <- 返回类型
 	 */
 	@RequestMapping("/get")
+	@ResponseBody
 	public Result get(HttpServletRequest request) {
 		String localAddr = request.getLocalAddr();
 		int localPort = request.getLocalPort();
 		String res = localAddr + "-" + localPort+"-"+ environmentProperties.getVersion();
-		return ResultBuilder.build(CodeEnum.SUCCESS, res);
+		return ResultBuilder.build(CodeEnum.SUCCESS,res);
 	}
-
 
 }

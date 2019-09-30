@@ -1,4 +1,6 @@
 spring:
+  profiles:
+    active: dev
   #视图引擎配置
   freemarker:
     #视图存放目录
