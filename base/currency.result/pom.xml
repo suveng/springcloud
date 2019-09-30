@@ -16,6 +16,11 @@
         <spring-data-redis.version>2.1.4.RELEASE</spring-data-redis.version>
         <spring-context.version>5.1.4.RELEASE</spring-context.version>
         <fastjson.version>1.2.56</fastjson.version>
+        <!-- 文件拷贝时的编码 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!-- 编译时的编码 -->
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
     </properties>
 
     <dependencies>
