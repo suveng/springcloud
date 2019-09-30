@@ -36,6 +36,11 @@
         <HdrHistogram.version>2.1.9</HdrHistogram.version>
         <spring-boot-admin.version>2.0.1</spring-boot-admin.version>
         <guava.version>19.0</guava.version>
+        <!-- 文件拷贝时的编码 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!-- 编译时的编码 -->
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
     </properties>
 
     <build>
