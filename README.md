@@ -11,20 +11,16 @@
     - `log` 日志层封装, 方便运维监控
     - `message` 外部社交消息告警
     - `lock` 并发锁,目前仅有redis
-- `config` 统一配置中心,目前使用 kafka 作为 bus 通知
-- `eureka`: 服务注册与服务发现,偏AP理论,可能不采用
 - `zuul`: 网关,流量转发
 - `service`: 服务层
-    - `common`: 重用类等等
     - `console`: 管理后台服务,后台模板服务
     - `order` 模拟订单服务,实际无意义
-    - `user`: 模拟用户服务,实际无意义
 
 ## 版本更新日志
 - 0.0.4
     - 使用consul作为注册中心
     - 废弃springcloud config
-    
+    - 使用consul作为配置中心,consul配置文件存放在每个module下面的settings.yml
 
 - 0.0.3
     - 变更总线队列为`kafka`
@@ -65,7 +61,14 @@
 - [`X-admin`](https://gitee.com/daniuit/X-admin)
 - [jetBrains](https://www.jetbrains.com/?from=https://github.com/suveng/springcloud)
 
-![](https://gitee.com/suveng/upic/raw/master/jetbrains-variant-3.png)
+
+ ![jetbrains](https://gitee.com/suveng/upic/raw/master/jetbrains-variant-3.png)
+ 
+
+## 外部依赖
+
+- consul
+
 ## 构建
 
 - `mvn clean install -Dmaven.test.skip=true`
@@ -75,14 +78,11 @@
 
 ### 本地部署
 
-服务启动顺序
+> ~~注意: 配置 MySQL 路径, rabbitMQ/kafka路径~~
+> 使用consul暂时不需要引入MQ
+>
 
-1. `eureka`
-2. `admin` , `config`
-3. 任意一个`service`
-4. `gateway`
 
-> 注意: 配置 MySQL 路径, rabbitMQ/kafka路径
 
 ### 上线部署
 咨询本人
@@ -107,17 +107,16 @@
 部署架构图....(待补充)
 
 
-## 外部依赖
-
-
 
     
 ## 环境信息 
 
-自行搭建或者修改 `application.yml` 里面的配置信息
+~~自行搭建或者修改 `application.yml` 里面的配置信息~~
 
-- `MySQL` `127.0.0.1:3306/srping` 
-- `Redis` `127.0.0.1:6379` 
+- ~~`MySQL` `127.0.0.1:3306/srping`~~
+- ~~`Redis` `127.0.0.1:6379`~~˚
+
+后面会启用dockerfile打包docker镜像,可以通过`docker inspect [image]`查看`env`变量
 
 ## 编码实践
 
