@@ -17,6 +17,8 @@
     - `order` 模拟订单服务,实际无意义
 
 ## 版本更新日志
+- 0.0.5 
+    - 引入hibernate validation参数校验
 - 0.0.4
     - 使用consul作为注册中心
     - 废弃springcloud config
