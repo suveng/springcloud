@@ -47,7 +47,7 @@ public class ResultBuilder {
 	 * @param msg 说明
 	 * @return result
 	 */
-	public static Result build(int code, String msg, Object data) {
+	public static Result build(int code,String msg, Object data) {
 		LogDetail logDetail = LogDetailThreadLocal.logDetailThreadLocal.get();
 		if (StrUtil.isBlank(logDetail.getRequsetId())) {
 			log.warn(Thread.currentThread().getName() + "没有requestid");

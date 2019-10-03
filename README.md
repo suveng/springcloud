@@ -62,6 +62,7 @@
 - [`hutool`](https://github.com/looly/hutool)
 - [`X-admin`](https://gitee.com/daniuit/X-admin)
 - [jetBrains](https://www.jetbrains.com/?from=https://github.com/suveng/springcloud)
+- [hibernate validation](https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#validator-gettingstarted-createproject)
 
 
  ![jetbrains](https://gitee.com/suveng/upic/raw/master/jetbrains-variant-3.png)
@@ -96,27 +97,13 @@
 - `junit4`
 
 
-
-## 领域模型(业务对象封装)
-
-
-## 技术架构
-
-技术架构图....(待补充)
-
-## 部署架构
-
-部署架构图....(待补充)
-
-
-
     
 ## 环境信息 
 
 ~~自行搭建或者修改 `application.yml` 里面的配置信息~~
 
 - ~~`MySQL` `127.0.0.1:3306/srping`~~
-- ~~`Redis` `127.0.0.1:6379`~~˚
+- ~~`Redis` `127.0.0.1:6379`~~
 
 后面会启用dockerfile打包docker镜像,可以通过`docker inspect [image]`查看`env`变量
 
@@ -128,6 +115,7 @@
 - 统一异常处理 `GlobalExceptionAdvice`
 - 统一日志msg格式: LogDetail是封装的日志抽象,原理是 `String.format()`
 - 全局请求id `LogDetailThreadLocal`
+- 统一参数校验 利用 `hibernate validation`做统一参数校验
 
 ## FAQ
 提问留下`issue`即可
