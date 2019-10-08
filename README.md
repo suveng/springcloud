@@ -17,6 +17,9 @@
     - `order` 模拟订单服务,实际无意义
 
 ## 版本更新日志
+
+- 0.0.6
+
 - 0.0.5 
     - 引入hibernate validation参数校验
     - zuul dockerfile, consul的settings.yml配置
