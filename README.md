@@ -19,6 +19,7 @@
 ## 版本更新日志
 - 0.0.5 
     - 引入hibernate validation参数校验
+    - zuul dockerfile, consul的settings.yml配置
 - 0.0.4
     - 使用consul作为注册中心
     - 废弃springcloud config
