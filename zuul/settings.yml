@@ -1,5 +1,9 @@
 zuul:
   routes:
+    ttc:
+      path: /ttc/**
+      serviceId: ttcommision-service
+      strip-prefix: false
     console:
       path: /console/**
       serviceId: console-service
