@@ -74,6 +74,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.qw.support</groupId>
+            <artifactId>currency.result</artifactId>
+        </dependency>
 
 
     </dependencies>
