@@ -1,5 +1,5 @@
 # 基础镜像
-FROM  s-repo.ttyuyin.com/library/openjdk8-openj9:alpine-slim
+FROM   192.168.9.233:30080/library/openjdk8-openj9:alpine-slim
 
 # 作者
 MAINTAINER suveng

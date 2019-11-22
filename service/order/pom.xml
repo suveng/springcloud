@@ -13,15 +13,7 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <properties>
-        <user>suveng</user>
-        <address>s-repo.ttyuyin.com</address>
-        <!-- 文件拷贝时的编码 -->
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <!-- 编译时的编码 -->
-        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
-    </properties>
+
     <dependencies>
 
         <!--hibernate validation-->
@@ -78,8 +70,6 @@
             <groupId>com.qw.support</groupId>
             <artifactId>currency.result</artifactId>
         </dependency>
-
-
     </dependencies>
 
     <build>
@@ -170,8 +160,15 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <executions>
                     <execution>
+                        <id>1</id>
                         <goals>
                             <goal>build-info</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>2</id>
+                        <goals>
+                            <goal>repackage</goal>
                         </goals>
                     </execution>
                 </executions>
