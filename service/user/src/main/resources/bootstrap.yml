@@ -1,0 +1,22 @@
+server:
+  port: 19197
+  servlet:
+    context-path: /
+spring:
+  application:
+    name: user-service
+  cloud:
+    consul:
+      host: 192.168.9.233
+      port: 8500
+      discovery:
+        prefer-ip-address: true #  ip 偏好; 这个必须配
+        service-name: user-service #注册在consul上面的名字，在consul的调用中，是通过此名字调用的
+        register-health-check: true #健康检查，保证服务处于启动状态，建议开启
+        instance-id: ${spring.application.name}:${spring.cloud.client.ip-address} # 服务id
+        health-check-url: http://${spring.cloud.client.ip-address}:${server.port}/actuator/health # 健康检查的URI
+      config:   # consul 配置中心
+        prefix: config
+        enabled: true
+        format: YAML
+        data-key: settings.yml
