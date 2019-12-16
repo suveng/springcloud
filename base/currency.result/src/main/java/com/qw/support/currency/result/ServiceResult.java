@@ -48,6 +48,7 @@ public class ServiceResult<T> extends AbstractResult {
 	 * @author suwenguang
 	 * @param codeEnum 系统代码
 	 * @param data 数据
+	 * @param <T> 泛型
 	 * @return serviceResult
 	 */
 	public static <T> ServiceResult<T> build(CodeEnum codeEnum, T data) {
@@ -60,6 +61,7 @@ public class ServiceResult<T> extends AbstractResult {
 	 * @param codeEnum 系统代码
 	 * @param pass 服务状态
 	 * @param data 数据
+	 * @param <T> 泛型
 	 * @return serviceResult
 	 */
 	public static <T> ServiceResult<T> build(boolean pass, CodeEnum codeEnum, T data) {
