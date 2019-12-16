@@ -12,6 +12,15 @@ import cn.hutool.core.util.StrUtil;
 @SuppressWarnings("all")
 public class LogDetail {
 
+	/**
+	 * 调用方
+	 */
+	private String appId;
+
+	/**
+	 * 调用参数
+	 */
+	private String reqData;
 
 	/**
 	 * 线程名称
@@ -114,6 +123,7 @@ public class LogDetail {
 
 	/**
 	 * 获取简单的返回
+	 * @return string
 	 */
 	public String getRes() {
 		return String.format("%s,requestid:%s", this.msg, this.requsetId);
@@ -194,4 +204,19 @@ public class LogDetail {
 	}
 
 
+	public String getAppId() {
+		return appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+	}
+
+	public String getReqData() {
+		return reqData;
+	}
+
+	public void setReqData(String reqData) {
+		this.reqData = reqData;
+	}
 }
