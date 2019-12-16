@@ -205,13 +205,13 @@ public class PlusLogForCommision extends AbstractLog {
 			logDetail.setRequsetId(IdUtil.fastSimpleUUID());
 		}
 
-		if (StrUtil.isBlank(logDetail.getAppId())){
-			logDetail.setAppId("没有appid");
-		}
-
 		stringBuilder.append("[").append(logDetail.getTag()).append("] ");
 		stringBuilder.append("#").append(log);
+		if (StrUtil.isNotBlank(logDetail.getAppId())){
+			stringBuilder.append("#").append(logDetail.getAppId());
+		}
 		stringBuilder.append("#").append("requesetId=").append(logDetail.getRequsetId());
+
 		log = stringBuilder.toString();
 		return log;
 	}
