@@ -68,14 +68,12 @@
 
     <distributionManagement>
         <repository>
-            <id>nexus-releases</id>
-            <name>Nexus Release Repository</name>
-            <url>http://192.168.9.232:9080/nexus/content/repositories/releases/</url>
+            <id>private-release</id>
+            <url>http://192.168.9.233:8081/repository/private-release/</url>
         </repository>
         <snapshotRepository>
-            <id>nexus-snapshots</id>
-            <name>Nexus Snapshot Repository</name>
-            <url>http://192.168.9.232:9080/nexus/content/repositories/snapshots/</url>
+            <id>private-snapshot</id>
+            <url>http://192.168.9.233:8081/repository/private-snapshot/</url>
         </snapshotRepository>
     </distributionManagement>
 

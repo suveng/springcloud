@@ -67,5 +67,5 @@ public interface IRobotService {
 	 *
 	 * @author suwenguang
 	 */
-	ServiceResult<DingTalkResult> sendMsgType(String msgtype, String content, List<String> atMobiles, Boolean isAtALl);
+	ServiceResult<DingTalkResult> sendMsgType(String msgtype, String content, List<String> atMobiles, Boolean isAtAll);
 }

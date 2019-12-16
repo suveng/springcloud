@@ -12,8 +12,7 @@ ENV LANG C.UTF-8
 # 添加目标镜像
 ADD ./target/*.jar app.jar
 
-# 对外暴露20210端口
-EXPOSE 20210
+EXPOSE 19197
 
 # 执行的容器的command
 ENTRYPOINT java -server -Dfile.encoding=UTF-8 -jar /app.jar

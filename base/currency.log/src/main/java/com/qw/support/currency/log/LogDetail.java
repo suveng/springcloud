@@ -114,7 +114,6 @@ public class LogDetail {
 
 	/**
 	 * 获取简单的返回
-	 * @return
 	 */
 	public String getRes() {
 		return String.format("%s,requestid:%s", this.msg, this.requsetId);
