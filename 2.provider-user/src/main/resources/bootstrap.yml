@@ -40,3 +40,8 @@ spring:
         enabled: true
         format: YAML
         data-key: settings.yml
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
