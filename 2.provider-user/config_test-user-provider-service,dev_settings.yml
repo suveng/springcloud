@@ -1,12 +1,3 @@
 env:
   version: 1.0
   author: suveng
-# 路由配置
-spring:
-  cloud:
-    gateway:
-      routes:
-        - id: neo_route
-          uri: http://github.com
-          predicates:
-            - Path=/suveng

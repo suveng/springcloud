@@ -11,7 +11,7 @@
 
     <groupId>qw.test</groupId>
     <artifactId>gateway</artifactId>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
     <name>gateway</name>
     <description>网关</description>
 
@@ -85,6 +85,32 @@
     </dependencyManagement>
 
     <build>
+        <filters>
+            <filter>src/main/filter/${env}.properties</filter>
+        </filters>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <excludes>
+                    <exclude>**/*.woff</exclude>
+                    <exclude>**/*.woff2</exclude>
+                    <exclude>**/*.ttf</exclude>
+                    <exclude>**/*.ico</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+                <includes>
+                    <include>**/*.woff</include>
+                    <include>**/*.woff2</include>
+                    <include>**/*.ttf</include>
+                    <include>**/*.ico</include>
+                </includes>
+            </resource>
+        </resources>
+
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

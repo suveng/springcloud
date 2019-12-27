@@ -1,7 +1,6 @@
 env:
-  version: 1.5-gateway-
+  version: 1.5-gateway
   author: suveng
-# 路由配置
 spring:
   cloud:
     gateway:
