@@ -9,10 +9,12 @@
     <version>1.0</version>
 
     <modules>
-        <module>zuul</module>
-        <module>service</module>
-        <module>base</module>
-        <module>admin</module>
+        <module>1.gateway</module>
+        <module>2.provider-user</module>
+        <module>10.core</module>
+        <module>10.service</module>
+        <module>10.SpringBootAdminServer</module>
+        <module>11.ZuulGateway</module>
     </modules>
 
     <packaging>pom</packaging>
