@@ -8,7 +8,7 @@ spring:
       host: 192.168.9.208 # ip
       port: 30102 # 端口
       discovery: # consul 注册中心
-        service-name: consul-test-service #注册在consul上面的名字，在consul的调用中，是通过此名字调用的
+        service-name: test-user-provider-service #注册在consul上面的名字，在consul的调用中，是通过此名字调用的
         register-health-check: true #健康检查，保证服务处于启动状态，建议开启
         instance-id: ${spring.application.name}:${spring.cloud.client.ip-address} # 服务id
         health-check-url: http://${spring.cloud.client.ip-address}:${server.port}/actuator/health # 健康检查的URI

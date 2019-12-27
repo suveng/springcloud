@@ -1,12 +1,15 @@
 env:
-  version: 1.0
+  version: 1.5-gateway-
   author: suveng
 # 路由配置
 spring:
   cloud:
     gateway:
+      discovery:
+        locator:
+          enabled: true
       routes:
-        - id: neo_route
-          uri: http://github.com
+        - id: test-user-provider
+          uri: lb://test-user-provider-service
           predicates:
-            - Path=/suveng
+            - Path=/user/**
