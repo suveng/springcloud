@@ -16,7 +16,7 @@ feign:
     disable-ssl-validation: true
   # 禁用hystrix
   hystrix:
-    enabled: false
+    enabled: true
   # 请求体启用压缩
   compression:
     request:

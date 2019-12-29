@@ -18,7 +18,7 @@ feign:
     disable-ssl-validation: true
 # To disable Hystrix in Feign
   hystrix:
-    enabled: false
+    enabled: true
   compression:
     request:
       enabled: true
