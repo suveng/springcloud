@@ -1,0 +1,4 @@
+server:
+  port: 30106
+  servlet:
+    context-path: /order
