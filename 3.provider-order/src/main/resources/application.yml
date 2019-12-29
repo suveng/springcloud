@@ -2,3 +2,22 @@ server:
   port: 30106
   servlet:
     context-path: /order
+
+
+feign:
+  client:
+    config: # 这里配置feign全局配置
+      connectTimeout: 5000
+      readTimeout: 5000
+      loggerLevel: full
+  httpclient:
+    disable-ssl-validation: true
+  # 禁用hystrix
+  hystrix:
+    enabled: false
+  # 请求体启用压缩
+  compression:
+    request:
+      enabled: true
+    response:
+      enabled: true
