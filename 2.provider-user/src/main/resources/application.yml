@@ -8,10 +8,12 @@ server:
 
 feign:
   client:
-    config: # 这里配置feign全局配置
-      connectTimeout: 5000
-      readTimeout: 5000
-      loggerLevel: full
+    config:
+      # 这里配置feign全局配置
+      default: #默认,可以配置具体的feign,比如commision
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: full
   httpclient:
     disable-ssl-validation: true
 # To disable Hystrix in Feign
