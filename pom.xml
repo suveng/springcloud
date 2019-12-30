@@ -12,8 +12,8 @@
         <module>1.gateway</module>
         <module>2.provider-user</module>
         <module>3.provider-order</module>
+        <module>4.dashboard</module>
         <module>10.core</module>
-        <module>10.service</module>
         <module>10.SpringBootAdminServer</module>
         <module>11.ZuulGateway</module>
     </modules>
