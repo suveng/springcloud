@@ -1,7 +1,7 @@
 package qw.test.order.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import qw.test.order.service.feign.FeignUserService;
@@ -12,6 +12,8 @@ import qw.test.order.service.feign.FeignUserService;
  **/
 @RestController
 public class FeignController {
+
+	@Qualifier("test-user-provider-service")
 	@Autowired
 	private FeignUserService feignUserService;
 
