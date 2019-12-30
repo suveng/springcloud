@@ -1,23 +1,19 @@
-# cloud系统
+# cloud系统-测试学习用
 
 ## 项目简介
 
-`springcloud` 脚手架
-
-## 目录结构说明
-- `admin` 监控中心
-- `base`: 基础复用包
-    - `result` 返回层封装
-    - `log` 日志层封装, 方便运维监控
-    - `message` 外部社交消息告警
-    - `lock` 并发锁,目前仅有redis
-- `zuul`: 网关,流量转发
-- `service`: 服务层
-    - `console`: 管理后台服务,后台模板服务
-    - `order` 模拟订单服务,实际无意义
+`springcloud`测试项目
 
 ## 版本更新日志
-
+- 1.0.0
+    - 组件更新
+    - springcloud版本升级为 Hoxton
+    - consul注册中心/配置中心
+    - springcloud gateway 网关
+    - 两个微服务
+    - 一个静态资源后台服务
+    - 微服务使用OpenFeign,自带熔断
+    
 - 0.0.7
     - log增加扩展demo
     - currency.log 1.3.0
@@ -52,16 +48,6 @@
 - `git flow`
 - [`JDK1.8`](https://www.oracle.com/)
 - [`Spring Cloud`](https://www.docs4dev.com/zh)
-    - `Spring Boot` 
-    - `Spring Security`
-    - `Spring Data`
-    - `Zuul`
-    - `Eureka`
-    - `Ribbon`
-    - `Feign`
-    - `Hystrix`
-    - `Spring Config`
-    - `kafka` `bus` 总线动态刷新配置
 - [`MyBatis`](http://www.mybatis.org/mybatis-3/zh/index.html) 
 - [`Redis 5.0`](https://redis.io/)
 - [`MySQL 5.7`](https://www.mysql.com/)
@@ -76,54 +62,18 @@
  ![jetbrains](https://gitee.com/suveng/upic/raw/master/jetbrains-variant-3.png)
  
 
-## 外部依赖
-
-- consul
-
 ## 构建
+开发环境构建:
+本地开发调试,无须打包成docker,上测试环境才需要
+- mvn clean package -Dmaven.test.skip=true -Pdev
+测试环境构建:
+- mvn clean package install -Dmaven.test.skip=true -DpushImage -Ptest
+## 启动/部署
 
-- ` `
-- `mvn clean package -Dmaven.test.skip=true`
-
-## 部署
-
-### 本地部署
-
-> ~~注意: 配置 MySQL 路径, rabbitMQ/kafka路径~~
-> 使用consul暂时不需要引入MQ
->
-
-
-
-### 上线部署
-咨询本人
-
-## 测试策略
-
-自动化测试如何分类，哪些必须写测试，哪些没有必要写测试
-
-- `junit4`
-
-
-    
-## 环境信息 
-
-~~自行搭建或者修改 `application.yml` 里面的配置信息~~
-
-- ~~`MySQL` `127.0.0.1:3306/srping`~~
-- ~~`Redis` `127.0.0.1:6379`~~
-
-后面会启用dockerfile打包docker镜像,可以通过`docker inspect [image]`查看`env`变量
-
-## 编码实践
-
-- 统一路径转发: 每个微服务配置 服务名,在`zuul`规则过滤掉这个路径服务,直接转发,
-详情看`gateway`模块的`application.yml`,服务间调用配置带上 服务前缀,详情看`user`模块的`client`
-- 统一代码格式化 `.editorconfig`
-- 统一异常处理 `GlobalExceptionAdvice`
-- 统一日志msg格式: LogDetail是封装的日志抽象,原理是 `String.format()`
-- 全局请求id `LogDetailThreadLocal`
-- 统一参数校验 利用 `hibernate validation`做统一参数校验
+本地: 
+IDEA启动
+测试: 
+k8s部署容器
 
 ## FAQ
 提问留下`issue`即可
