@@ -12,3 +12,11 @@ spring:
           uri: lb://test-user-provider-service
           predicates:
             - Path=/user/**
+        - id: test-order-provider
+          uri: lb://test-order-provider-service
+          predicates:
+            - Path=/order/**
+        - id: test-dashboard-provider
+          uri: lb://test-dashboard-provider-service
+          predicates:
+            - Path=/dashboard/**

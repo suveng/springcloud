@@ -2,8 +2,6 @@ server:
   port: 30114
   servlet:
     context-path: /dashboard
-
-
 feign:
   client:
     config:
@@ -23,3 +21,25 @@ feign:
       enabled: true
     response:
       enabled: true
+
+spring:
+  #视图引擎配置
+  freemarker:
+    #视图存放目录
+    template-loader-path: classpath:/templates/
+    #缓存启动配置
+    cache: false
+    charset: utf-8
+    allow-request-override: false
+    allow-session-override: false
+    check-template-location: true
+    content-type: text/html
+    enabled: true
+    expose-request-attributes: false
+    expose-session-attributes: false
+    expose-spring-macro-helpers: true
+    prefer-file-system-access: true
+    #在 ftl 中使用 request.contextPath
+    request-context-attribute: request
+    settings: {"date_format":"yyyy-MM-dd","datetime_format":"yyyy-MM-dd HH:mm:ss"}
+#    suffix: .ftl # 后缀,不需要,提高可读性
