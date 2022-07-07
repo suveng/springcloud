@@ -125,7 +125,7 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-expression</artifactId>
             <scope>compile</scope>
-            <version>5.0.6.RELEASE</version>
+            <version>5.2.21.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
